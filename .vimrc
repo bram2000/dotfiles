@@ -48,6 +48,7 @@ filetype plugin indent on    " required
 Plugin 'luochen1990/rainbow'
 let g:rainbow_active = 1 " 0 if you want to enable it later via :RainbowToggle
 
+Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
 " Bram - Vundle - VimClojure
@@ -77,7 +78,11 @@ syntax on
 set autoindent
 set smartindent
 set expandtab
-set tabstop=2
+set tabstop=4
 set backspace=2
+set ruler
+set relativenumber
+set number
+set clipboard=unnamed
 
 au BufRead,BufNewFile *.clj set filetype=clojure
