@@ -48,6 +48,8 @@ filetype plugin indent on    " required
 Plugin 'luochen1990/rainbow'
 let g:rainbow_active = 1 " 0 if you want to enable it later via :RainbowToggle
 
+Plugin 'plasticboy/vim-markdown'
+
 " Bram - Vundle - VimClojure
 Plugin 'VimClojure'
 " Automatically determine indenting using fuzzy matching. e.g. the a line
