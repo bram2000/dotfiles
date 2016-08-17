@@ -82,7 +82,6 @@ set tabstop=4
 set backspace=2
 set ruler
 set relativenumber
-set number
 set clipboard=unnamed
 
 au BufRead,BufNewFile *.clj set filetype=clojure
