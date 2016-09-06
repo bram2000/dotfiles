@@ -72,6 +72,9 @@ let vimclojure#ParenRainbow=1
 
 Plugin 'tpope/vim-surround'
 
+Plugin 'Solarized'
+set rtp+=~/.vim/bundle/vim-colors-solarized
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
@@ -90,7 +93,8 @@ filetype plugin on
 
 "-------------- \Vundle ------------------
 
-syntax on
+au BufRead,BufNewFile *.clj set filetype=clojure
+
 set autoindent
 set smartindent
 set expandtab
@@ -99,8 +103,17 @@ set backspace=2
 set ruler
 set relativenumber
 set clipboard=unnamed
+"
+" Use solarized colorscheme
+syntax enable
+let g:solarized_termcolors=16
+let g:solarized_style="dark"
+set background=dark
+colorscheme solarized
 
-au BufRead,BufNewFile *.clj set filetype=clojure
+command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+        \ | wincmd p | diffthis
+
 
 " Insert ticks around word
 map tt ysiw'
