@@ -1,0 +1,14 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+name = Jon Bramley
+email = jon.bramley@made.com
+[web]
+	browser = open
+[core]
+	excludesfile = /Users/jbramley/.gitexcludes
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false
