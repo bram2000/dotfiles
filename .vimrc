@@ -103,6 +103,7 @@ set backspace=2
 set ruler
 set relativenumber
 set clipboard=unnamed
+set hlsearch
 "
 " Use solarized colorscheme
 syntax enable
@@ -114,6 +115,11 @@ colorscheme solarized
 command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
         \ | wincmd p | diffthis
 
+" Add powerline support (installed via pip)
+source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
 
 " Insert ticks around word
 map tt ysiw'
