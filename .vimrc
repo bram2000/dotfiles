@@ -33,9 +33,11 @@ Plugin 'cypok/vim-sml'
 
 " Bram - Vundle
 Plugin 'luochen1990/rainbow'
+Plugin 'fatih/vim-go'
 let g:rainbow_active = 1 " 0 if you want to enable it later via :RainbowToggle
 
 Plugin 'godlygeek/tabular'
+Plugin 'Valloric/YouCompleteMe'
 
 " Markdown
 " autocmd BufNewFile,BufReadPost *.md set filetype=markdown
@@ -75,12 +77,14 @@ Plugin 'tpope/vim-surround'
 Plugin 'Solarized'
 set rtp+=~/.vim/bundle/vim-colors-solarized
 
+Plugin 'lrvick/Conque-Shell'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
-"filetype plugin indent on    " required
+filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-filetype plugin on
+"filetype plugin on
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -96,9 +100,10 @@ filetype plugin on
 au BufRead,BufNewFile *.clj set filetype=clojure
 
 set autoindent
-set smartindent
+"set smartindent
+set tabstop=4
+set shiftwidth=4
 set expandtab
-set ts=4
 set backspace=2
 set ruler
 set relativenumber
@@ -126,3 +131,6 @@ map tt ysiw'
 map `` ysiw`
 map "" ysiw"
 map TT ebi{'<ESC>ea'}<ESC>
+
+" Some options for YouCompleteMe
+let g:ycm_autoclose_preview_window_after_completion = 1
