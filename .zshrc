@@ -1,5 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export GOPATH=~/Code/go
+export SCRIPTS=~/Scripts
+export PATH=$PATH:$GOPATH/bin:$SCRIPTS
+export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/jbramley/.oh-my-zsh
@@ -51,7 +55,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx brew brew-cask pip docker)
+plugins=(git osx brew brew-cask pip docker golang)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -84,7 +88,22 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+alias rsml="rlwrap sml"
+setopt APPEND_HISTORY
+setopt no_share_history
 DEFAULT_USER=jbramley
+
+alias sl='ls'
+alias gdt='git difftool'
+alias j='jobs'
+
+alias yq='shyaml get-value'
+
+function mdviewer(){
+  pandoc $* | lynx -stdin
+}
 
 # brew - zsh-syntax-highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
