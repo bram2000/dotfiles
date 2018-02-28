@@ -1,14 +1,19 @@
 # This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
-name = Jon Bramley
-email = jon.bramley@made.com
+	name = Jon Bramley
+	email = jon.bramley@made.com
 [web]
 	browser = open
 [core]
-	excludesfile = /Users/jbramley/.gitexcludes
+	excludesfile = /Users/jbramley/.gitignoreglobal
 [merge]
 	tool = vimdiff
 	conflictstyle = diff3
 [mergetool]
 	prompt = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
