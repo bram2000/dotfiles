@@ -8,10 +8,13 @@
 [core]
 	excludesfile = /Users/jbramley/.gitignoreglobal
 [merge]
-	tool = vimdiff
+    tool = vimdiff
 	conflictstyle = diff3
-[mergetool]
+[mergetool "vimdiff"]
+	cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 	prompt = false
+[diff]
+    tool = vimdiff
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
