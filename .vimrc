@@ -56,6 +56,15 @@ Plug 'kien/ctrlp.vim'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
+" JS & Angular stuff
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'burnettk/vim-angular'
+
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
 " All of your Plugs must be added before the following line
 call plug#end() "required
 
@@ -84,11 +93,23 @@ colorscheme solarized
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
         \ | wincmd p | diffthis
 
-" Add powerline support (installed via pip)
-source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+""" Add powerline support (installed via pip)
+""source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
+"let g:pymode_python = 'python3'
+"source /Users/jbramley/Library/Python/3.6/lib/python/site-packages/powerline/bindings/vim/plugin/powerline.vim
+"py3 from powerline.vim import setup as powerline_setup
+"py3 powerline_setup()
+"py3 del powerline_setup
+"
+" Airline (powerline replacement) config
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline_theme = 'solarized'
 
 " Insert ticks around word
 map tt ysiw'
@@ -134,11 +155,14 @@ let g:pymode_breakpoint = 0
 let g:pymode_lint = 0
 let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'pep257']
 
+" Set <Leader> key to ;
+let mapleader = ";"
+
 nnoremap <leader>L :PymodeLint
 " }}}
 
 " Rope Options {{{
-let g:pymode_rope = 1
+let g:pymode_rope = 0
 
 " pymode-completion
 let g:pymode_rope_completion = 0
@@ -160,6 +184,28 @@ let g:pymode_syntax_space_errors = 0
 "let g:pymode_rope_completion = 0
 "let g:pymode_rope_lookup_project = 0
 "let g:pymode_virtualenv = 0
+let g:pymode_rope_regenerate_on_write = 1
+
+" Settings for JS & Angular
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_conceal_function             = "ƒ"
+let g:javascript_conceal_null                 = "ø"
+let g:javascript_conceal_this                 = "@"
+let g:javascript_conceal_return               = "⇚"
+let g:javascript_conceal_undefined            = "¿"
+let g:javascript_conceal_NaN                  = "ℕ"
+let g:javascript_conceal_prototype            = "¶"
+let g:javascript_conceal_static               = "•"
+let g:javascript_conceal_super                = "Ω"
+let g:javascript_conceal_arrow_function       = "⇒"
+"let g:javascript_conceal_noarg_arrow_function = "🞅"
+"let g:javascript_conceal_underscore_arrow_function = "🞅"
+set conceallevel=0
+
+autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
+autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab
+
 
 " Reload .vimrc automatically when saved
 if has ('autocmd') " Remain compatible with earlier versions
@@ -181,3 +227,16 @@ endfunction
 "   <F2> is mapped to pydoc
 map <F3> :call TogglePaste()<CR>
 map <F5> :set invnumber invrelativenumber<CR>
+map <F7> :tabp<CR>
+imap <F7> <Esc>:tabp<CR>
+map <F8> :tabn<CR>
+imap <F8> <Esc>:tabn<CR>
+
+" Open files in vertical horizontal split
+nnoremap <Leader>s :call fzf#run({
+    \ 'right': winwidth('.') / 2,
+    \ 'sink':  'botright split' })<CR>
+
+set laststatus=2
+set cursorline
+set cursorcolumn
