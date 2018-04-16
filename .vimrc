@@ -186,6 +186,8 @@ let g:pymode_syntax_space_errors = 0
 "let g:pymode_virtualenv = 0
 let g:pymode_rope_regenerate_on_write = 1
 
+let g:ale_linters = {'javascript': ['eslint']}
+
 " Settings for JS & Angular
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
