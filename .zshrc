@@ -6,7 +6,7 @@ export PATH=$PATH:$GOPATH/bin:$SCRIPTS
 export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/jbramley/.oh-my-zsh
+export ZSH=/Users/$(whoami)/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -91,11 +91,14 @@ source $ZSH/oh-my-zsh.sh
 alias rsml="rlwrap sml"
 setopt APPEND_HISTORY
 setopt no_share_history
-DEFAULT_USER=jbramley
+DEFAULT_USER=$(whoami)
 
 alias sl='ls'
 alias gdt='git difftool'
 alias j='jobs'
+
+alias vi='nvim'
+alias vim='nvim'
 
 alias yq='shyaml get-value'
 
