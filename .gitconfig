@@ -6,7 +6,7 @@
 [web]
 	browser = open
 [core]
-	excludesfile = /Users/jbramley/.gitignoreglobal
+	excludesfile = ~/.gitignoreglobal
 [merge]
     tool = vimdiff
 	conflictstyle = diff3
