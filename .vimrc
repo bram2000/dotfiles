@@ -187,6 +187,7 @@ let g:pymode_syntax_space_errors = 0
 let g:pymode_rope_regenerate_on_write = 1
 
 let g:ale_linters = {'javascript': ['eslint']}
+let g:ale_fixers = {'javascript': ['eslint']}
 
 " Settings for JS & Angular
 let g:javascript_plugin_jsdoc = 1
@@ -228,6 +229,7 @@ endfunction
 "   <F1> is mapped to help
 "   <F2> is mapped to pydoc
 map <F3> :call TogglePaste()<CR>
+map <F4> :ALEFix<CR>
 map <F5> :set invnumber invrelativenumber<CR>
 map <F7> :tabp<CR>
 imap <F7> <Esc>:tabp<CR>
