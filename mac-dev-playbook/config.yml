@@ -66,8 +66,19 @@ homebrew_cask_apps:
     #- vagrant
 
 # See `geerlingguy.mas` role documentation for usage instructions.
-mas_installed_apps: []
-mas_email: ""
+mas_installed_apps: 
+  - { id: 494803304, name: "WiFi Explorer (2.4)" }
+  - { id: 1054607607, name: "Helium (2.0)" }
+  - { id: 425424353, name: "The Unarchiver (3.11.5)" }
+  - { id: 406056744, name: "Evernote (7.1)" }
+  - { id: 671736912, name: "FruitJuice (2.3.3)" }
+  - { id: 568494494, name: "Pocket (1.7.5)" }
+  - { id: 412754595, name: "SoundCloud (1.3.2)" }
+  - { id: 411643860, name: "DaisyDisk (4.5)" }
+  - { id: 972028355, name: "Micro Snitch (1.2)" }
+mas_signin_dialog: yes
+mas_upgrade_all_apps: yes
+mas_email: "bram2000@me.com"
 mas_password: ""
 
 osx_script: "~/.osx --no-restart"
