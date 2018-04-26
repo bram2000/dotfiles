@@ -36,7 +36,7 @@ homebrew_installed_packages:
   - nvm
     #- php
   - ssh-copy-id
-  - cowsay
+    #- cowsay
   - readline
   - openssl
   - pv
