@@ -451,6 +451,7 @@ sudo chsh -s /bin/zsh $USERNAME
 ###############################################################################
 
 rm ~/Library/Application\ Support/Spectacle/Shortcuts.json
+mkdir -p ~/Library/Application\ Support/Spectacle/
 ln -s ~/Code/dotfiles/Spectacle/Shortcuts.json ~/Library/Application\ Support/Spectacle/Shortcuts.json
 
 ###############################################################################
