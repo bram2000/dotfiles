@@ -78,6 +78,9 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 # Set background to dark-grey color
 sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '/Library/Desktop Pictures/Solid Colors/Solid Gray Dark.png'"
 
+# OSX Dark mode
+defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
+
 ###############################################################################
 # SSD-specific tweaks                                                         #
 ###############################################################################
