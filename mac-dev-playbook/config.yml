@@ -10,7 +10,7 @@ dotfiles_repo: https://github.com/bram2000/dotfiles.git
 dotfiles_repo_accept_hostkey: yes
 dotfiles_repo_local_destination: ~/Code/dotfiles
 dotfiles_files:
-  - .gitignore
+  - .gitconfig
     #- .osx
   - .vimrc
   - .zshrc
