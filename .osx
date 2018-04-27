@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -ex
+
 # Mac OS X configuration
 #
 # This configuration applies to the latest version of Mac OS X (currently
