@@ -453,6 +453,7 @@ sudo chsh -s /bin/zsh $USERNAME
 rm ~/Library/Application\ Support/Spectacle/Shortcuts.json
 mkdir -p ~/Library/Application\ Support/Spectacle/
 ln -s ~/Code/dotfiles/Spectacle/Shortcuts.json ~/Library/Application\ Support/Spectacle/Shortcuts.json
+osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Spectacle.app", hidden:false}'
 
 ###############################################################################
 # Kill/restart affected applications                                          #
