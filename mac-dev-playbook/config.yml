@@ -42,6 +42,7 @@ homebrew_installed_packages:
   - pv
   - wget
   - wrk
+  - ag
 
 homebrew_taps:
   - homebrew/core
