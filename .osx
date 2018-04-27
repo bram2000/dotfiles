@@ -447,6 +447,13 @@ defaults write com.googlecode.iterm2 "LoadPrefsFromCustomFolder" -bool true
 sudo chsh -s /bin/zsh $USERNAME
 
 ###############################################################################
+# Spectacle config
+###############################################################################
+
+rm ~/Library/Application\ Support/Spectacle/Shortcuts.json
+ln -s ~/Code/dotfiles/Spectacle/Shortcuts.json ~/Library/Application\ Support/Spectacle/Shortcuts.json
+
+###############################################################################
 # Kill/restart affected applications                                          #
 ###############################################################################
 
