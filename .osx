@@ -443,6 +443,9 @@ defaults write com.google.Chrome DisablePrintPreview -bool true
 defaults write com.googlecode.iterm2 "PrefsCustomFolder" -string "/Users/$USERNAME/Code/dotfiles/iterm2_profile"
 defaults write com.googlecode.iterm2 "LoadPrefsFromCustomFolder" -bool true
 
+# Change terminal to zsh
+sudo chsh -s /bin/zsh $USERNAME
+
 ###############################################################################
 # Kill/restart affected applications                                          #
 ###############################################################################
