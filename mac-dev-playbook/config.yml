@@ -50,6 +50,7 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
+  - blue-jeans
   - docker
   - firefox
   - google-chrome
@@ -73,6 +74,7 @@ mas_installed_apps:
   - { id: 412754595, name: "SoundCloud (1.3.2)" }
   - { id: 411643860, name: "DaisyDisk (4.5)" }
   - { id: 972028355, name: "Micro Snitch (1.2)" }
+  - { id: 552383089, name: "Dashlane (5.10.0)" }
     #mas_signin_dialog: yes
 mas_upgrade_all_apps: yes
 mas_email: "bram2000@me.com"
