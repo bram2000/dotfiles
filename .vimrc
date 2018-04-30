@@ -65,6 +65,8 @@ Plug 'burnettk/vim-angular'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+Plug 'scrooloose/nerdtree'
+
 " All of your Plugs must be added before the following line
 call plug#end() "required
 
