@@ -9,3 +9,5 @@ tags
 .nvmrc
 start_.sh
 **/.DS_Store
+*.pyc
+*.egg-info/
