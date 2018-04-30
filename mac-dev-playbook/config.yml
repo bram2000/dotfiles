@@ -62,6 +62,7 @@ homebrew_cask_apps:
   - little-snitch
   - micro-snitch
   - spectacle
+  - dash3
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: 
