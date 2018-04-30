@@ -1,0 +1,11 @@
+tags
+.mypy_cache
+*.swp
+*.swo
+.ropeproject
+.python-version
+**__pycache__
+**.pytest_cache
+.nvmrc
+start_.sh
+**/.DS_Store
