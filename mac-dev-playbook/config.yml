@@ -11,6 +11,7 @@ dotfiles_repo_accept_hostkey: yes
 dotfiles_repo_local_destination: ~/Code/dotfiles
 dotfiles_files:
   - .gitconfig
+  - .gitignoreglobal
   - .osx
   - .vimrc
   - .zshrc
