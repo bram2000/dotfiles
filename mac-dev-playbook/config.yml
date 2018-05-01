@@ -67,6 +67,7 @@ homebrew_cask_apps:
   - spectacle
   - dash3
   - tunnelblick
+  - keybase
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: 
