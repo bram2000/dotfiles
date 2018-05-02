@@ -1,27 +1,11 @@
 call plug#begin('~/.vim/plugged')
 
-" The following are examples of different formats supported.
-" Keep Plug commands between vundle#begin/end.
-" plugin on GitHub repo
 Plug 'tpope/vim-fugitive'
 Plug 'tommcdo/vim-fugitive-blame-ext'
 Plug 'tpope/vim-rhubarb'
-" plugin from http://vim-scripts.org/vim/scripts.html
-"Plug 'L9'
-" Git plugin not hosted on GitHub
 Plug 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-"Plug 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-"Plug 'ascenator/L9', {'name': 'newL9'}
-"
 Plug 'cypok/vim-sml'
-
-" Bram - Vundle
 Plug 'luochen1990/rainbow'
 Plug 'fatih/vim-go'
 let g:rainbow_active = 1 " 0 if you want to enable it later via :RainbowToggle
@@ -29,30 +13,14 @@ let g:rainbow_active = 1 " 0 if you want to enable it later via :RainbowToggle
 Plug 'godlygeek/tabular'
 Plug 'Valloric/YouCompleteMe', { 'do' : '~/.vim/plugged/YouCompleteMe/install.py --gocode-completer' }
 Plug 'python-mode/python-mode'
-
-" Markdown
-" autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-" Plug 'instant-markdown.vim'
-" Plug 'tpope/vim-markdown'
-" let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
-
-" Plug 'Syntastic'
 Plug 'w0rp/ale'
-
 Plug 'dan-t/vim-hsimport'
-"
 "Plug 'ascenator/L9', {'name': 'newL9'}
-
 Plug 'tpope/vim-surround'
-
-" Plug 'Solarized'
-" set rtp+=~/.vim/bundle/vim-colors-solarized
-Plug 'micha/vim-colors-solarized'
 
 Plug 'lrvick/Conque-Shell'
 
 Plug 'kien/ctrlp.vim'
-
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
@@ -66,6 +34,13 @@ Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 Plug 'scrooloose/nerdtree'
+
+Plug 'roman/golden-ratio'
+
+" Plug 'Solarized'
+" set rtp+=~/.vim/bundle/vim-colors-solarized
+" Plug 'micha/vim-colors-solarized'
+Plug 'morhetz/gruvbox'
 
 " All of your Plugs must be added before the following line
 call plug#end() "required
@@ -86,11 +61,12 @@ set clipboard=unnamed
 set hlsearch
 "
 " Use solarized colorscheme
-syntax enable
-let g:solarized_termcolors=16
-let g:solarized_style="dark"
+"let g:solarized_termcolors=16
+"let g:solarized_style="dark"
 set background=dark
-colorscheme solarized
+"colorscheme solarized
+colorscheme gruvbox
+syntax enable
 
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
         \ | wincmd p | diffthis
@@ -188,35 +164,24 @@ let g:pymode_syntax_space_errors = 0
 "let g:pymode_virtualenv = 0
 let g:pymode_rope_regenerate_on_write = 1
 
-let g:ale_linters = {'javascript': ['eslint']}
-let g:ale_fixers = {'javascript': ['eslint']}
-
-" Settings for JS & Angular
-let g:javascript_plugin_jsdoc = 1
-let g:javascript_plugin_ngdoc = 1
-let g:javascript_conceal_function             = "ƒ"
-let g:javascript_conceal_null                 = "ø"
-let g:javascript_conceal_this                 = "@"
-let g:javascript_conceal_return               = "⇚"
-let g:javascript_conceal_undefined            = "¿"
-let g:javascript_conceal_NaN                  = "ℕ"
-let g:javascript_conceal_prototype            = "¶"
-let g:javascript_conceal_static               = "•"
-let g:javascript_conceal_super                = "Ω"
-let g:javascript_conceal_arrow_function       = "⇒"
-"let g:javascript_conceal_noarg_arrow_function = "🞅"
-"let g:javascript_conceal_underscore_arrow_function = "🞅"
-set conceallevel=0
+let g:ale_linters = {'javascript': ['eslint'],
+\                    'python': ['pylint']}
+let g:ale_fixers = {'javascript': ['eslint'],
+\                   'python': ['yapf']}
 
 autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
 autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab
-
 
 " Reload .vimrc automatically when saved
 if has ('autocmd') " Remain compatible with earlier versions
  augroup vimrc     " Source vim configuration upon save
     autocmd! BufWritePost $MYVIMRC source % | echom "Reloaded " . $MYVIMRC | redraw
-    autocmd! BufWritePost $MYGVIMRC if has('gui_running') | so % | echom "Reloaded " . $MYGVIMRC | endif | redraw
+    if !empty($MYGVIMRC)
+        autocmd! BufWritePost $MYGVIMRC if has('gui_running') | so % | echom "Reloaded " . $MYGVIMRC | endif | redraw
+    endif
+    if !empty($MYREALVIMRC)
+        autocmd! BufWritePost $MYREALVIMRC source % | echom "Reloaded " . $MYREALVIMRC | redraw
+    endif
   augroup END
 endif " has autocmd
 
@@ -233,16 +198,38 @@ endfunction
 map <F3> :call TogglePaste()<CR>
 map <F4> :ALEFix<CR>
 map <F5> :set invnumber invrelativenumber<CR>
+map <F6> :NERDTreeToggle<CR>
 map <F7> :tabp<CR>
 imap <F7> <Esc>:tabp<CR>
 map <F8> :tabn<CR>
 imap <F8> <Esc>:tabn<CR>
+map <F9> :bp<CR>
+imap <F9> <Esc>:bp<CR>
+map <F10> :bn<CR>
+imap <F10> <Esc>:bn<CR>
+
+" Move to the previous buffer with "gp"
+nnoremap gp :bp<CR>
+" Move to the next buffer with "gn"
+nnoremap gn :bn<CR>
+" List all possible buffers with "gl"
+nnoremap gl :ls<CR>
+" List all possible buffers with "gb" and accept a new buffer argument [1]
+nnoremap gb :ls<CR>:b
+
+" Close buffer without closing window
+nmap <leader>c :ene<CR>:bw #<CR>
 
 " Open files in vertical horizontal split
 nnoremap <Leader>s :call fzf#run({
     \ 'right': winwidth('.') / 2,
     \ 'sink':  'botright split' })<CR>
 
+" Dash integration for objc and nimrod.
+command! DashPy silent !open -g dash://python3:"<cword>"
+command! DashDef silent !open -g dash://def:"<cword>"
+
 set laststatus=2
 set cursorline
 set cursorcolumn
+set hidden
