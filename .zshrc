@@ -102,6 +102,9 @@ alias vim='nvim'
 
 alias yq='shyaml get-value'
 
+# Pygments
+alias pcat='pygmentize -f terminal256 -O style=native -g'
+
 function mdviewer(){
   pandoc $* | lynx -stdin
 }
