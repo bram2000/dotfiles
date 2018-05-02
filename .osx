@@ -54,7 +54,7 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
 # Reveal IP address, hostname, OS version, etc. when clicking the clock
 # in the login window
-if [[ "$RUN_AS_ROOT" = true ]]; then
+'if' [[ "$RUN_AS_ROOT" = true ]]; then
   sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 fi
 
@@ -444,7 +444,9 @@ defaults write com.googlecode.iterm2 "PrefsCustomFolder" -string "/Users/$USER/C
 defaults write com.googlecode.iterm2 "LoadPrefsFromCustomFolder" -bool true
 
 # Change terminal to zsh
-sudo chsh -s /bin/zsh $USER
+if [[ "$RUN_AS_ROOT" = true ]]; then
+    sudo chsh -s /bin/zsh $USER
+fi
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
