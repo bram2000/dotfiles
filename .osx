@@ -456,6 +456,13 @@ ln -s ~/Code/dotfiles/Spectacle/Shortcuts.json ~/Library/Application\ Support/Sp
 osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Spectacle.app", hidden:false}'
 
 ###############################################################################
+# Startup items
+###############################################################################
+osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/LaunchBar.app", hidden:false}'
+osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Tunnelblick.app", hidden:false}'
+osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Micro Snitch.app", hidden:false}'
+
+###############################################################################
 # Kill/restart affected applications                                          #
 ###############################################################################
 
