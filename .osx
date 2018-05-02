@@ -445,6 +445,8 @@ defaults write com.googlecode.iterm2 "LoadPrefsFromCustomFolder" -bool true
 
 # Change terminal to zsh
 sudo chsh -s /bin/zsh $USER
+# Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 ###############################################################################
 # Spectacle config
