@@ -17,27 +17,16 @@ dotfiles_files:
   - .zshrc
 
 homebrew_installed_packages:
-  # - ansible # Installed via Pip.
   - autoconf
   - zsh
-    #- doxygen
-    #- gettext
-    #- gifsicle
   - git
   - go
   - gpg
-    #- hub
   - httpie
-    #- iperf
   - libevent
-    #- sqlite
-    #- mcrypt
   - nmap
-    #- node
   - nvm
-    #- php
   - ssh-copy-id
-    #- cowsay
   - readline
   - openssl
   - pv
@@ -45,8 +34,10 @@ homebrew_installed_packages:
   - wrk
   - ag
   - pyenv
+  - pyenv-virtualenv
   - rbenv
   - fswatch
+  - entr
 
 homebrew_taps:
   - homebrew/core
