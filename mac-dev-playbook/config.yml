@@ -19,6 +19,8 @@ dotfiles_files:
 homebrew_installed_packages:
   - autoconf
   - zsh
+  - zsh-syntax-highlighting
+  - z
   - git
   - go
   - gpg
