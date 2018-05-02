@@ -54,7 +54,7 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
 # Reveal IP address, hostname, OS version, etc. when clicking the clock
 # in the login window
-'if' [[ "$RUN_AS_ROOT" = true ]]; then
+if [[ "$RUN_AS_ROOT" = true ]]; then
   sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 fi
 
