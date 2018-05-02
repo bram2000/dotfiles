@@ -68,6 +68,7 @@ homebrew_cask_apps:
   - dash3
   - tunnelblick
   - keybase
+  - spotify
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: 
