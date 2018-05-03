@@ -40,6 +40,8 @@ homebrew_installed_packages:
   - rbenv
   - fswatch
   - entr
+  - links
+  - ctop
 
 homebrew_taps:
   - homebrew/core
