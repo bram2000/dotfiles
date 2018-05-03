@@ -108,6 +108,7 @@ pip_packages:
     - mdv
     - Pygments
     - ipython
+    - flake8
   # - name: mkdocs
   #   state: present # present/absent/latest, default: present
   #   version: "0.16.3" # default: N/A
