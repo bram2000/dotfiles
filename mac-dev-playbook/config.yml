@@ -15,6 +15,7 @@ dotfiles_files:
   - .osx
   - .vimrc
   - .zshrc
+  - .globalrc
 
 homebrew_installed_packages:
   - autoconf
@@ -42,6 +43,7 @@ homebrew_installed_packages:
   - entr
   - links
   - ctop
+  - { name: global, install_options: "with-pygments, with-ctags" }
 
 homebrew_taps:
   - homebrew/core
@@ -59,7 +61,6 @@ homebrew_cask_apps:
   - iterm2
   - launchbar
   - little-snitch
-  - micro-snitch
   - spectacle
   - dash3
   - tunnelblick
@@ -80,6 +81,7 @@ mas_installed_apps:
   - { id: 411643860, name: "DaisyDisk (4.5)" }
   - { id: 972028355, name: "Micro Snitch (1.2)" }
   - { id: 552383089, name: "Dashlane (5.10.0)" }
+  - { id: 972028355, name: "Micro Snitch (4.2)" }
     #mas_signin_dialog: yes
 mas_upgrade_all_apps: yes
 mas_email: "bram2000@me.com"
