@@ -69,6 +69,7 @@ homebrew_cask_apps:
   - spotify
   - evernote
   - visual-studio-code
+  - postman
   - font-fantasquesansmono-nerd-font-mono
 
 # See `geerlingguy.mas` role documentation for usage instructions.
