@@ -48,6 +48,7 @@ homebrew_installed_packages:
 homebrew_taps:
   - homebrew/core
   - caskroom/cask
+  - caskroom/fonts
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
@@ -68,6 +69,7 @@ homebrew_cask_apps:
   - spotify
   - evernote
   - visual-studio-code
+  - font-fantasquesansmono-nerd-font-mono
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: 
