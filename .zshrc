@@ -129,3 +129,4 @@ export NVM_DIR="$HOME/.nvm"
 . /usr/local/etc/profile.d/z.sh
 
 export GTAGSLABEL=pygments >> .profile
+export PATH=/usr/local/Cellar/tidy-html5/5.6.0/bin/:$PATH
