@@ -74,6 +74,7 @@ homebrew_cask_apps:
   - postman
   - font-fantasquesansmono-nerd-font-mono
   - tidy-html5
+  - vlc
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: 
