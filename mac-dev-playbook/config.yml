@@ -120,6 +120,7 @@ pip_packages:
     - autoflake
     - isort
     - aws-fuzzy-finder
+    - youtube-dl
   # - name: mkdocs
   #   state: present # present/absent/latest, default: present
   #   version: "0.16.3" # default: N/A
