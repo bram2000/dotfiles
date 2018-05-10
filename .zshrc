@@ -130,3 +130,7 @@ export NVM_DIR="$HOME/.nvm"
 
 export GTAGSLABEL=pygments >> .profile
 export PATH=/usr/local/Cellar/tidy-html5/5.6.0/bin/:$PATH
+
+# Stop `brew doctor` from complaining about pyenv *-config scripts
+# https://github.com/yyuu/pyenv/issues/106#issuecomment-94921352
+alias brew="env PATH=${PATH//$(pyenv root)\/shims:/} brew"
