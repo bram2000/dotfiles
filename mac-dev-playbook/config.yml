@@ -45,7 +45,7 @@ homebrew_installed_packages:
   - ctop
   - telnet
   - awscli
-  - ffmpeg
+  - { name: ffmpeg, install_options: "with-openssl" }
   - libav
   - { name: global, install_options: "with-pygments, with-ctags" }
 
