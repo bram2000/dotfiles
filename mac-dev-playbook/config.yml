@@ -45,6 +45,8 @@ homebrew_installed_packages:
   - ctop
   - telnet
   - awscli
+  - ffmpeg
+  - libav
   - { name: global, install_options: "with-pygments, with-ctags" }
 
 homebrew_taps:
@@ -107,7 +109,8 @@ gem_packages: []
   # - name: bundler
   #   state: present # present/absent/latest, default: present
   #   version: "~> 1.15.1" # default: N/A
-npm_packages: []
+npm_packages: 
+    - eslint-cli
   # - name: webpack
   #   state: present # present/absent/latest, default: present
   #   version: "^2.6" # default: N/A
