@@ -78,6 +78,7 @@ homebrew_cask_apps:
   - font-fantasquesansmono-nerd-font-mono
   - tidy-html5
   - vlc
+  - macpass
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: 
