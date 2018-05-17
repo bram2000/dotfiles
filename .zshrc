@@ -134,3 +134,8 @@ export PATH=/usr/local/Cellar/tidy-html5/5.6.0/bin/:$PATH
 # Stop `brew doctor` from complaining about pyenv *-config scripts
 # https://github.com/yyuu/pyenv/issues/106#issuecomment-94921352
 alias brew="env PATH=${PATH//$(pyenv root)\/shims:/} brew"
+
+
+# tabtab source for yo package
+# uninstall by removing these lines or running `tabtab uninstall yo`
+[[ -f /Users/jbramley/.nvm/versions/node/v8.11.1/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh ]] && . /Users/jbramley/.nvm/versions/node/v8.11.1/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh
