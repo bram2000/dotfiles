@@ -85,6 +85,7 @@ homebrew_cask_apps:
   - virtualbox-extension-pack
   - istat-menus
   - meld
+  - steam
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: 
