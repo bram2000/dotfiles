@@ -4,6 +4,8 @@ export GOPATH=~/Code/go
 export SCRIPTS=~/Scripts
 export PATH=$PATH:$GOPATH/bin:$SCRIPTS
 export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
+#export PATH=$PATH:"/Applications/Xcode.app/Contents/Applications/"
+export PATH="/usr/local/Cellar/gnu-sed/4.5/bin/:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/$(whoami)/.oh-my-zsh
