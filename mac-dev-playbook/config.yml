@@ -49,6 +49,7 @@ homebrew_installed_packages:
   - { name: ffmpeg, install_options: "with-openssl, with-fdk-aac, with-x265, with-libvpx" }
   - { name: libav, install_options: "with-openssl" }
   - { name: global, install_options: "with-pygments, with-ctags" }
+  - { name: gnu-sed, install_options: "with-default-names" }
 
 homebrew_taps:
   - homebrew/core
@@ -86,6 +87,7 @@ homebrew_cask_apps:
   - istat-menus
   - meld
   - steam
+  - xld
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: 
