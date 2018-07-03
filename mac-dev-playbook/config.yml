@@ -89,6 +89,8 @@ homebrew_cask_apps:
   - meld
   - steam
   - xld
+  - gimp
+  - audio-hijack
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: 
