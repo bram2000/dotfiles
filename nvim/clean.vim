@@ -2,16 +2,18 @@
 call plug#begin('~/.vim/plugged')
     Plug 'morhetz/gruvbox'
     Plug 'tpope/vim-fugitive'
+    Plug 'tommcdo/vim-fugitive-blame-ext'
     Plug 'tpope/vim-rhubarb'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-dispatch'
     Plug 'tpope/vim-unimpaired'
-    Plug 'cloudhead/neovim-fuzzy'
+    "Plug 'cloudhead/neovim-fuzzy'
     Plug 'srstevenson/vim-picker'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'tomtom/tcomment_vim'
     Plug 'airblade/vim-gitgutter'
+    Plug 'junegunn/fzf.vim'
 call plug#end()
 
 
@@ -27,6 +29,7 @@ set inccommand=nosplit
 set expandtab
 set tabstop=4
 set shiftwidth=4
+set mouse=a
 
 
 " Mappings
