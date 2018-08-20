@@ -8,8 +8,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-dispatch'
     Plug 'tpope/vim-unimpaired'
     Plug 'srstevenson/vim-picker'
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+    " Plug 'vim-airline/vim-airline'
+    " Plug 'vim-airline/vim-airline-themes'
+    Plug 'itchyny/lightline.vim'
+    Plug 'shinchu/lightline-gruvbox.vim'
     Plug 'tomtom/tcomment_vim'
     Plug 'airblade/vim-gitgutter'
     Plug '/usr/local/opt/fzf'
@@ -47,3 +49,6 @@ let g:picker_find_flags = '--color never --files'
 " airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+
+let g:lightline = {}
+let g:lightline.colorscheme = 'gruvbox'
