@@ -53,7 +53,10 @@ inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
 map bp :PickerBuffer<CR>
 map sq :bd<CR>
 map <Leader><Enter> :Buffers<CR>
-map <Leader>g :GFiles<CR>
+noremap <Leader>g :GFiles<CR>
+noremap <Leader>f :Files<CR>
+noremap <Leader>t :Tags<CR>
+nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
 
 nmap <Leader>1 <Plug>lightline#bufferline#go(1)
 nmap <Leader>2 <Plug>lightline#bufferline#go(2)
