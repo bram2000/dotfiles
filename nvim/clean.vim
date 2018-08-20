@@ -7,12 +7,12 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-dispatch'
     Plug 'tpope/vim-unimpaired'
-    "Plug 'cloudhead/neovim-fuzzy'
     Plug 'srstevenson/vim-picker'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'tomtom/tcomment_vim'
     Plug 'airblade/vim-gitgutter'
+    Plug '/usr/local/opt/fzf'
     Plug 'junegunn/fzf.vim'
 call plug#end()
 
@@ -30,6 +30,8 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set mouse=a
+set cursorcolumn
+set cursorline
 
 
 " Mappings
