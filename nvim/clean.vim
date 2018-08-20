@@ -32,6 +32,8 @@ set inccommand=nosplit
 set expandtab
 set tabstop=4
 set shiftwidth=4
+set smartindent
+set autoindent
 set mouse=a
 set cursorcolumn
 set cursorline
