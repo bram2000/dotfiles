@@ -57,6 +57,7 @@ map <Leader><Enter> :Buffers<CR>
 noremap <Leader>g :GFiles<CR>
 noremap <Leader>f :Files<CR>
 noremap <Leader>t :Tags<CR>
+noremap <Leader>b :Buffers<CR>
 nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
 
 nmap <Leader>1 <Plug>lightline#bufferline#go(1)
