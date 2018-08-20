@@ -39,6 +39,10 @@ set autoindent
 set mouse=a
 set cursorcolumn
 set cursorline
+set completeopt=longest,menuone
+" let <Enter> accpet a match in completion menu
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
 
 
 " Mappings
