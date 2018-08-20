@@ -85,7 +85,7 @@ source $ZSH/oh-my-zsh.sh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 setopt auto_cd 
-cdpath=(/Users/jbramley/Code/madedotcom/)
+cdpath=(/Users/jbramley/Code/madedotcom/; /Users/jbramley/Code/)
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
