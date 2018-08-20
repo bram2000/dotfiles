@@ -51,7 +51,6 @@ inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
 
 
 " Mappings
-map bp :PickerBuffer<CR>
 map sq :bd<CR>
 map <Leader><Enter> :Buffers<CR>
 noremap <Leader>g :GFiles<CR>
