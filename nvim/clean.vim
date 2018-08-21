@@ -76,6 +76,7 @@ autocmd BufNewFile,BufRead *.py set formatprg=yapf
 
 " Mappings
 noremap <F2> :TagbarToggle<CR>
+noremap <F5> :diffupdate<CR>
 
 map sq :bd<CR>
 map <Leader><Enter> :Buffers<CR>
