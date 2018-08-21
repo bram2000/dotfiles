@@ -45,7 +45,7 @@ set mouse=a
 set cursorcolumn
 set cursorline
 set hidden
-set clipboard=unnamed
+set clipboard=unnamedplus
 set grepprg=ag\ --nogroup\ --nocolor
 set completeopt=longest,menuone
 " let <Enter> accpet a match in completion menu
