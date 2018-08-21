@@ -16,6 +16,8 @@ call plug#begin('~/.vim/plugged')
     Plug '/usr/local/opt/fzf'
     Plug 'junegunn/fzf.vim'
     Plug 'machakann/vim-highlightedyank'
+    Plug 'sheerun/vim-polyglot'
+    Plug 'majutsushi/tagbar'
 call plug#end()
 
 
@@ -29,6 +31,7 @@ set noshowmode
 let g:netrw_liststyle= 3
 let g:netrw_banner=0
 
+
 " Behaviour
 set inccommand=nosplit
 set expandtab
@@ -39,6 +42,7 @@ set autoindent
 set mouse=a
 set cursorcolumn
 set cursorline
+set hidden
 set clipboard=unnamed
 set grepprg=ag\ --nogroup\ --nocolor
 set completeopt=longest,menuone
@@ -52,6 +56,9 @@ inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
 
 
 " Mappings
+"
+noremap <F2> :TagbarToggle<CR>
+
 map sq :bd<CR>
 map <Leader><Enter> :Buffers<CR>
 noremap <Leader>g :GFiles<CR>
