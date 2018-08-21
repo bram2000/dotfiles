@@ -13,7 +13,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-repeat'
     Plug 'tommcdo/vim-fugitive-blame-ext'
-    Plug 'srstevenson/vim-picker'
     Plug 'itchyny/lightline.vim'
     Plug 'shinchu/lightline-gruvbox.vim'
     Plug 'mgee/lightline-bufferline'
@@ -25,6 +24,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'sheerun/vim-polyglot'
     Plug 'majutsushi/tagbar'
     Plug 'Yggdroot/indentLine'
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
 call plug#end()
 
 
