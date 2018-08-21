@@ -95,6 +95,10 @@ nmap <Leader>9 <Plug>lightline#bufferline#go(9)
 nmap <Leader>0 <Plug>lightline#bufferline#go(10)
 
 
+" Tagbar
+let g:tagbar_zoomwidth = 0
+
+
 " lightline
 function! LightlineFugitive()
     if exists('*fugitive#head')
