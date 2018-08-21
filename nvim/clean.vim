@@ -19,6 +19,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'machakann/vim-highlightedyank'
     Plug 'sheerun/vim-polyglot'
     Plug 'majutsushi/tagbar'
+    Plug 'Yggdroot/indentLine'
 call plug#end()
 
 
