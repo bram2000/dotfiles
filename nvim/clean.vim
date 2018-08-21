@@ -6,6 +6,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-dispatch'
     Plug 'tpope/vim-unimpaired'
     Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-repeat'
     Plug 'tommcdo/vim-fugitive-blame-ext'
     Plug 'srstevenson/vim-picker'
     Plug 'itchyny/lightline.vim'
