@@ -55,6 +55,18 @@ inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
 inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
   \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
+" Map F1 to Esc in insert and allow it to quit help
+inoremap <F1> <Esc>
+noremap <F1> :call MapF1()<CR>
+function! MapF1()
+  if &buftype == "help"
+    exec 'quit'
+  else
+    exec 'help'
+  endif
+endfunction
+
+
 " Language specific
 autocmd BufNewFile,BufRead *.py set formatprg=yapf
 
