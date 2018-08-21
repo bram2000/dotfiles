@@ -55,6 +55,8 @@ inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
 inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
   \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
+" Language specific
+autocmd BufNewFile,BufRead *.py set formatprg=yapf
 
 
 " Mappings
