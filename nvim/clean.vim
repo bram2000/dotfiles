@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-unimpaired'
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-repeat'
+    Plug 'tpope/vim-vinegar'
     Plug 'tommcdo/vim-fugitive-blame-ext'
     Plug 'itchyny/lightline.vim'
     Plug 'shinchu/lightline-gruvbox.vim'
