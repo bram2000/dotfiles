@@ -26,6 +26,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'Yggdroot/indentLine'
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
+    Plug 'w0rp/ale'
 call plug#end()
 
 
