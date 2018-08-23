@@ -109,6 +109,8 @@ alias j='jobs'
 alias vi='nvim'
 alias vim='nvim'
 
+alias :q='exit'
+
 alias yq='shyaml get-value'
 
 # Pygments
