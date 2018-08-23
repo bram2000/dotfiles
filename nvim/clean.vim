@@ -28,6 +28,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
     Plug 'w0rp/ale'
+    Plug 'chrisbra/csv.vim'
 call plug#end()
 
 
@@ -38,8 +39,6 @@ set relativenumber
 set number
 set showtabline=2
 set noshowmode
-let g:netrw_liststyle= 3
-let g:netrw_banner=0
 
 
 " Behaviour
