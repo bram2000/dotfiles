@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-vinegar'
+    Plug 'tpope/vim-sensible'
     Plug 'tommcdo/vim-fugitive-blame-ext'
     Plug 'morhetz/gruvbox'
     Plug 'itchyny/lightline.vim'
@@ -47,7 +48,6 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set smartindent
-set autoindent
 set mouse=a
 set cursorcolumn
 set cursorline
