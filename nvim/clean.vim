@@ -74,10 +74,6 @@ function! MapF1()
 endfunction
 
 
-" Language specific
-autocmd BufNewFile,BufRead *.py set formatprg=yapf
-
-
 " Mappings
 noremap <F2> :TagbarToggle<CR>
 noremap <F5> :diffupdate<CR>
