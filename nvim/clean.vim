@@ -13,6 +13,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-vinegar'
     Plug 'tpope/vim-sensible'
+    Plug 'tpope/vim-abolish'
     Plug 'tommcdo/vim-fugitive-blame-ext'
     Plug 'morhetz/gruvbox'
     Plug 'itchyny/lightline.vim'
