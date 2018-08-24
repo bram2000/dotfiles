@@ -5,7 +5,6 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " Plugins
 call plug#begin('~/.vim/plugged')
-    Plug 'morhetz/gruvbox'
     Plug 'tpope/vim-rhubarb'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-dispatch'
@@ -14,6 +13,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-vinegar'
     Plug 'tommcdo/vim-fugitive-blame-ext'
+    Plug 'morhetz/gruvbox'
     Plug 'itchyny/lightline.vim'
     Plug 'shinchu/lightline-gruvbox.vim'
     Plug 'mgee/lightline-bufferline'
