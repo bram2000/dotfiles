@@ -17,9 +17,16 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-commentary'
     Plug 'tommcdo/vim-fugitive-blame-ext'
     Plug 'morhetz/gruvbox'
-    Plug 'itchyny/lightline.vim'
-    Plug 'shinchu/lightline-gruvbox.vim'
-    Plug 'mgee/lightline-bufferline'
+    Plug 'justinmk/molokai'
+    Plug 'joshdick/onedark.vim'
+    Plug 'KeitaNakamura/neodark.vim'
+    Plug 'rakr/vim-one'
+    Plug 'BrainDeath0/Hypsteria'
+    Plug 'vim-scripts/Gummybears'
+    Plug 'haishanh/night-owl.vim'
+    Plug 'godlygeek/tabular'
+    Plug 'plasticboy/vim-markdown'
+    Plug 'vim-airline/vim-airline'
     Plug 'airblade/vim-gitgutter'
     Plug '/usr/local/opt/fzf'
     Plug 'junegunn/fzf.vim'
@@ -105,35 +112,6 @@ nmap <Leader>0 <Plug>lightline#bufferline#go(10)
 " Tagbar
 let g:tagbar_zoomwidth = 0
 
-
-" lightline
-function! LightlineFugitive()
-    if exists('*fugitive#head')
-        let branch = fugitive#head()
-        return branch !=# '' ? '⭠ '.branch : ''
-    endif
-    return ''
-endfunction
-
-let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head',
-      \   'fugitive': 'LightlineFugitive'
-      \ },
-      \ 'separator': { 'left': "\u2b80", 'right': "\u2b82" },
-      \ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" }
-      \ }
-
-let g:lightline#bufferline#show_number  = 1
-let g:lightline#bufferline#shorten_path = 0
-let g:lightline#bufferline#unnamed      = '[No Name]'
-"
-" let g:lightline                  = {}
-let g:lightline.tabline          = {'left': [['buffers']], 'right': [['close']]}
-let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
-let g:lightline.component_type   = {'buffers': 'tabsel'}
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'jsformatter'
