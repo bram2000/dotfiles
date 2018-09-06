@@ -49,7 +49,7 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set smartindent
-set mouse=a
+set mouse=nv
 set cursorcolumn
 set cursorline
 set hidden
@@ -85,7 +85,8 @@ noremap <Leader>g :GFiles<CR>
 noremap <Leader>f :Files<CR>
 noremap <Leader>t :Tags<CR>
 noremap <Leader>b :Buffers<CR>
-noremap <Leader>o :only<CR>
+noremap <Leader>o <ESC>:only<CR>
+noremap <Leader>m <ESC>:exec &mouse!=""? "set mouse=" : "set mouse=nv"<CR>
 nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
 nnoremap <silent> <Leader>gs :Gstatus<CR>:20wincmd_<CR>
 
