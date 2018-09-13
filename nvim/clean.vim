@@ -66,7 +66,7 @@ set hidden
 set clipboard=unnamedplus
 set grepprg=ag\ --nogroup\ --nocolor
 set completeopt=longest,menuone
-set fileencodings=ucs-bom,utf-16le,utf-8,default,latin1
+
 " let <Enter> accpet a match in completion menu
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
