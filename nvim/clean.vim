@@ -39,6 +39,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'honza/vim-snippets'
     Plug 'w0rp/ale'
     Plug 'chrisbra/csv.vim'
+    Plug 'reinh/vim-makegreen'
 call plug#end()
 
 
