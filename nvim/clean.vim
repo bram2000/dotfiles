@@ -45,7 +45,8 @@ call plug#end()
 
 " Appearance
 set background=dark
-colorscheme gruvbox
+colorscheme one
+let g:airline_theme='one'
 set relativenumber
 set number
 set showtabline=2
