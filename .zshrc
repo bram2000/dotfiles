@@ -61,7 +61,7 @@ export NVM_NO_USE=true
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-nvm git osx brew pip docker python pep8 pyenv)
+plugins=(zsh-nvm git osx brew pip docker docker-compose python pep8 pyenv)
 
 source $ZSH/oh-my-zsh.sh
 
