@@ -1,4 +1,4 @@
-# If you come from bash you might have to change your $PATH.
+ # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export GOPATH=~/Code/go
 export SCRIPTS=~/Scripts
@@ -14,7 +14,8 @@ export ZSH=/Users/$(whoami)/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="bram"
+export BAT_THEME="TwoDark"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -139,6 +140,7 @@ export PATH=/usr/local/Cellar/tidy-html5/5.6.0/bin/:$PATH
 # https://github.com/yyuu/pyenv/issues/106#issuecomment-94921352
 alias brew="env PATH=${PATH//$(pyenv root)\/shims:/} brew"
 
+source ~/.iterm2_shell_integration.zsh
 
 # tabtab source for yo package
 # uninstall by removing these lines or running `tabtab uninstall yo`
