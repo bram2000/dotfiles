@@ -85,6 +85,15 @@ function! MapF1()
   endif
 endfunction
 
+function! FormatPythonDictAsJson() range
+  execute a:firstline . "," . a:lastline . "s/'/\"/g"
+  execute a:firstline . "," . a:lastline . 's/None/"None"/g'
+  execute a:firstline . "," . a:lastline . 's/True/true/g'
+  execute a:firstline . "," . a:lastline . 's/False/false/g'
+  execute a:firstline . "," . a:lastline . '!python -m json.tool'
+endfunction
+command! -range FormatPythonDictAsJson <line1>,<line2>call FormatPythonDictAsJson()
+
 
 " Mappings
 noremap <F2> :TagbarToggle<CR>
