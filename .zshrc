@@ -62,7 +62,7 @@ export NVM_NO_USE=true
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-nvm git osx brew pip docker docker-compose python pep8 pyenv iterm2)
+plugins=(zsh-nvm git osx brew pip docker docker-compose python pep8 pyenv iterm2 postgres httpie)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,6 +106,8 @@ DEFAULT_USER=$(whoami)
 alias sl='ls'
 alias gdt='git difftool'
 alias j='jobs'
+
+alias bat='bat -p'
 
 alias vi='nvim'
 alias vim='nvim'
