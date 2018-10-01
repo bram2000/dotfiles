@@ -107,6 +107,7 @@ noremap <Leader>t :Tags<CR>
 noremap <Leader>b :Buffers<CR>
 noremap <Leader>o <ESC>:only<CR>
 noremap <Leader>m <ESC>:exec &mouse!=""? "set mouse=" : "set mouse=nv"<CR>
+noremap <Leader>l :ALEFix<CR>
 nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
 nnoremap <silent> <Leader>gs :Gstatus<CR>:20wincmd_<CR>
 
