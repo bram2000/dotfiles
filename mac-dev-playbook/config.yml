@@ -50,6 +50,7 @@ homebrew_installed_packages:
   - fzy
   - bat
   - fd
+  - keycastr
   - { name: ffmpeg, install_options: "with-openssl, with-fdk-aac, with-x265, with-libvpx" }
   - { name: libav, install_options: "with-openssl" }
   - { name: global, install_options: "with-pygments, with-ctags" }
