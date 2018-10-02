@@ -108,6 +108,8 @@ noremap <Leader>b :Buffers<CR>
 noremap <Leader>o <ESC>:only<CR>
 noremap <Leader>m <ESC>:exec &mouse!=""? "set mouse=" : "set mouse=nv"<CR>
 noremap <Leader>l :ALEFix<CR>
+noremap <Leader>e :Explore<CR>
+noremap <Leader>s :Sexplore<CR>
 nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
 nnoremap <silent> <Leader>gs :Gstatus<CR>:20wincmd_<CR>
 
@@ -122,6 +124,8 @@ nmap <Leader>8 <Plug>lightline#bufferline#go(8)
 nmap <Leader>9 <Plug>lightline#bufferline#go(9)
 nmap <Leader>0 <Plug>lightline#bufferline#go(10)
 
+" Netrw
+let g:netrw_liststyle = 3
 
 " Tagbar
 let g:tagbar_zoomwidth = 0
