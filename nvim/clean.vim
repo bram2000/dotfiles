@@ -112,6 +112,7 @@ noremap <Leader>e :Explore<CR>
 noremap <Leader>s :Sexplore<CR>
 nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
 nnoremap <silent> <Leader>gs :Gstatus<CR>:20wincmd_<CR>
+nmap <silent> <leader>d <Plug>DashSearch
 
 nmap <Leader>1 <Plug>lightline#bufferline#go(1)
 nmap <Leader>2 <Plug>lightline#bufferline#go(2)
