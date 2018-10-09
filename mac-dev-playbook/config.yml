@@ -38,6 +38,7 @@ homebrew_installed_packages:
   - ag
   - pyenv
   - pyenv-virtualenv
+  - pipenv
   - rbenv
   - fswatch
   - entr
