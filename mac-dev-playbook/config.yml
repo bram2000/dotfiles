@@ -22,6 +22,7 @@ homebrew_installed_packages:
   - zsh
   - zsh-syntax-highlighting
   - z
+  - fish
   - git
   - go
   - gpg
