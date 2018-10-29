@@ -49,6 +49,7 @@ homebrew_installed_packages:
   - awscli
   - pstree
   - unrar
+  - p7zip
   - fzy
   - bat
   - fd
