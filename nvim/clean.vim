@@ -18,13 +18,13 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-commentary'
     Plug 'tommcdo/vim-fugitive-blame-ext'
     Plug 'morhetz/gruvbox'
-    Plug 'justinmk/molokai'
-    Plug 'joshdick/onedark.vim'
-    Plug 'KeitaNakamura/neodark.vim'
-    Plug 'rakr/vim-one'
-    Plug 'BrainDeath0/Hypsteria'
-    Plug 'vim-scripts/Gummybears'
-    Plug 'haishanh/night-owl.vim'
+    " Plug 'justinmk/molokai'
+    " Plug 'joshdick/onedark.vim'
+    " Plug 'KeitaNakamura/neodark.vim'
+    " Plug 'rakr/vim-one'
+    " Plug 'BrainDeath0/Hypsteria'
+    " Plug 'vim-scripts/Gummybears'
+    " Plug 'haishanh/night-owl.vim'
     Plug 'godlygeek/tabular'
     Plug 'plasticboy/vim-markdown'
     Plug 'vim-airline/vim-airline'
@@ -40,12 +40,14 @@ call plug#begin('~/.vim/plugged')
     Plug 'w0rp/ale'
     Plug 'chrisbra/csv.vim'
     Plug 'reinh/vim-makegreen'
+    Plug 'rizzatti/dash.vim'
+    Plug 'ervandew/supertab'
 call plug#end()
 
 
 " Appearance
 set background=dark
-colorscheme one
+colorscheme gruvbox
 let g:airline_theme='one'
 set relativenumber
 set number
@@ -66,6 +68,10 @@ set hidden
 set clipboard=unnamedplus
 set grepprg=ag\ --nogroup\ --nocolor
 set completeopt=longest,menuone
+
+let g:ale_lint_on_insert_leave = 1
+
+autocmd FileType python setlocal omnifunc=python3complete#Complete
 
 " let <Enter> accpet a match in completion menu
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -110,9 +116,19 @@ noremap <Leader>m <ESC>:exec &mouse!=""? "set mouse=" : "set mouse=nv"<CR>
 noremap <Leader>l :ALEFix<CR>
 noremap <Leader>e :Explore<CR>
 noremap <Leader>s :Sexplore<CR>
+noremap <Leader>v :Vexplore<CR>
+noremap <Leader>h :ALEHover<CR>
+noremap <Leader>r :ALEFindReferences<CR>
+noremap <Leader>c :Gvdiff<CR>
 nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
 nnoremap <silent> <Leader>gs :Gstatus<CR>:20wincmd_<CR>
 nmap <silent> <leader>d <Plug>DashSearch
+
+" Navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 nmap <Leader>1 <Plug>lightline#bufferline#go(1)
 nmap <Leader>2 <Plug>lightline#bufferline#go(2)
@@ -125,8 +141,18 @@ nmap <Leader>8 <Plug>lightline#bufferline#go(8)
 nmap <Leader>9 <Plug>lightline#bufferline#go(9)
 nmap <Leader>0 <Plug>lightline#bufferline#go(10)
 
+
 " Netrw
 let g:netrw_liststyle = 3
+autocmd FileType netrw nnoremap <buffer> q :bw<CR>
+autocmd FileType netrw noremap <buffer> <Space> :Ntree<CR>
+" Per default, netrw leaves unmodified buffers open. This autocommand
+" deletes netrw's buffer once it's hidden (using ':q', for example)
+autocmd FileType netrw setl bufhidden=delete
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " Tagbar
 let g:tagbar_zoomwidth = 0
