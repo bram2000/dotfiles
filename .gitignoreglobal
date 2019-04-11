@@ -1,4 +1,4 @@
-tags
+/tags
 .mypy_cache
 *.swp
 *.swo
