@@ -8,6 +8,10 @@ export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 export PATH="/usr/local/Cellar/gnu-sed/4.5/bin/:$PATH"
 export PATH="$PATH:/anaconda3/bin/"
 
+export PIPENV_IGNORE_VIRTUALENVS=1
+export PIPENV_PYTHON=~/.pyenv/shims/python3
+export PIPENV_MAX_DEPTH=5
+
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/$(whoami)/.oh-my-zsh
 
@@ -94,10 +98,6 @@ cdpath=(/Users/jbramley/Code/madedotcom/; /Users/jbramley/Code/)
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-#
 alias rsml="rlwrap sml"
 setopt APPEND_HISTORY
 setopt no_share_history
@@ -108,16 +108,18 @@ alias gdt='git difftool'
 alias j='jobs'
 
 alias bat='bat -p'
+alias batp='bat -p --paging=none'
 
 alias vi='nvim'
 alias vim='nvim'
+alias pvim='pipenv run nvim'
 
 alias :q='exit'
 
 alias yq='shyaml get-value'
 
-# Pygments
-alias pcat='pygmentize -f terminal256 -O style=gruvbox -g'
+alias ctags-python='ctags -R --fields=+l --languages=python --python-kinds=-iv -f ./tags $(python -c "import os, sys; print('"' '"'.join('"'{}'"'.format(d) for d in sys.path if os.path.isdir(d)))")'
+alias ctags-python-pipenv='ctags -R --fields=+l --languages=python --python-kinds=-iv -f ./tags $(pipenv run python -c "import os, sys; print('"' '"'.join('"'{}'"'.format(d) for d in sys.path if os.path.isdir(d)))")'
 
 function mdviewer(){
   pandoc $* | lynx -stdin
@@ -133,10 +135,11 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 # Add rbenv shims to the path
 eval "$(rbenv init -)"
 
-. /usr/local/etc/profile.d/z.sh
+# . /usr/local/etc/profile.d/z.sh
 
 export GTAGSLABEL=pygments >> .profile
 export PATH=/usr/local/Cellar/tidy-html5/5.6.0/bin/:$PATH
+export VISUAL=nvim
 
 # Stop `brew doctor` from complaining about pyenv *-config scripts
 # https://github.com/yyuu/pyenv/issues/106#issuecomment-94921352
