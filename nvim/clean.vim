@@ -54,6 +54,10 @@ call plug#begin('~/.vim/plugged')
         \ }
     Plug 'powerman/vim-plugin-AnsiEsc',
     Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}},
+    Plug 'farmergreg/vim-lastplace'
+    Plug 'moll/vim-bbye'
+    Plug 'mbbill/undotree'
+    " Plug 'kassio/neoterm'
 call plug#end()
 
 
@@ -79,6 +83,8 @@ set cursorline
 set hidden
 set clipboard=unnamedplus
 set grepprg=ag\ --nogroup\ --nocolor
+set cmdheight=2
+set autoread " auto read when a file is changed
 " set completeopt=longest,menuone
 
 " let g:ale_lint_on_insert_leave = 1
@@ -129,7 +135,7 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
-map sq :bd<CR>
+map sq :Bdelete<CR>
 map <Leader><Enter> :Buffers<CR>
 noremap <Leader>g :GFiles<CR>
 noremap <Leader>f :Files<CR>
@@ -148,6 +154,7 @@ noremap <Leader>c :Gvdiff<CR>
 nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
 nnoremap <silent> <Leader>gs :Gstatus<CR>:20wincmd_<CR>
 " nmap <silent> <leader>d <Plug>DashSearch
+noremap <silent> <Leader>u :UndotreeToggle<CR>
 
 " Navigation
 map <C-h> <C-w>h
@@ -292,3 +299,24 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+
+
+" Tagbar config
+let g:tagbar_type_elixir = {
+    \ 'ctagstype' : 'elixir',
+    \ 'kinds' : [
+        \ 'f:functions',
+        \ 'functions:functions',
+        \ 'c:callbacks',
+        \ 'd:delegates',
+        \ 'e:exceptions',
+        \ 'i:implementations',
+        \ 'a:macros',
+        \ 'o:operators',
+        \ 'm:modules',
+        \ 'p:protocols',
+        \ 'r:records',
+        \ 't:tests'
+    \ ]
+    \ }
