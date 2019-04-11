@@ -8,7 +8,7 @@
 [core]
 	excludesfile = ~/.gitignoreglobal
 [merge]
-    tool = vimdiff
+	tool = vimdiff
 	conflictstyle = diff3
 [mergetool "vimdiff"]
 	cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
