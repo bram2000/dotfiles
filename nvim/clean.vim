@@ -43,17 +43,17 @@ call plug#begin('~/.vim/plugged')
     Plug 'reinh/vim-makegreen'
     Plug 'rizzatti/dash.vim'
     " Plug 'ervandew/supertab'
-    Plug 'ncm2/ncm2'
     Plug 'roxma/nvim-yarp'
-    Plug 'ncm2/ncm2-bufword'
-    Plug 'ncm2/ncm2-path'
-    Plug 'ncm2/ncm2-jedi'
-    Plug 'ncm2/ncm2-ultisnips'
+    " Plug 'ncm2/ncm2-bufword'
+    " Plug 'ncm2/ncm2-path'
+    " Plug 'ncm2/ncm2-jedi'
+    " Plug 'ncm2/ncm2-ultisnips'
     Plug 'autozimu/LanguageClient-neovim', {
         \ 'branch': 'next',
         \ 'do': 'bash install.sh',
         \ }
     Plug 'powerman/vim-plugin-AnsiEsc',
+    Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}},
 call plug#end()
 
 
@@ -86,11 +86,19 @@ set grepprg=ag\ --nogroup\ --nocolor
 autocmd FileType python setlocal omnifunc=python3complete#Complete
 
 " let <Enter> accpet a match in completion menu
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
-  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
-  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
+inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
+inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
+inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
+inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
+inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
+
+
+" inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+"   \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+" inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+"   \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 " Map F1 to Esc in insert and allow it to quit help
 inoremap <F1> <Esc>
@@ -129,8 +137,7 @@ noremap <Leader>t :Tags<CR>
 noremap <Leader>b :Buffers<CR>
 noremap <Leader>o <ESC>:only<CR>
 noremap <Leader>m <ESC>:exec &mouse!=""? "set mouse=" : "set mouse=nv"<CR>
-" noremap <Leader>l :ALEFix<CR>
-noremap <Leader>l :call LanguageClient#textDocument_formatting()<CR>
+noremap <Leader>l :call CocAction('format')<CR>
 noremap <Leader>d :call LanguageClient#textDocument_definition()<CR>
 noremap <Leader>e :Explore<CR>
 noremap <Leader>s :Sexplore<CR>
@@ -169,11 +176,11 @@ autocmd FileType netrw noremap <buffer> <Space> :Ntree<CR>
 autocmd FileType netrw setl bufhidden=delete
 
 " parameter expansion for selected entry via Enter
-inoremap <silent> <expr> <CR> (pumvisible() ? ncm2_ultisnips#expand_or("\<CR>", 'n') : "\<CR>")
+" inoremap <silent> <expr> <CR> (pumvisible() ? ncm2_ultisnips#expand_or("\<CR>", 'n') : "\<CR>")
 
-let g:UltiSnipsExpandTrigger="<c-tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+" let g:UltiSnipsExpandTrigger="<c-tab>"
+" let g:UltiSnipsJumpForwardTrigger="<tab>"
+" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " Tagbar
 let g:tagbar_zoomwidth = 0
@@ -188,11 +195,16 @@ let g:airline#extensions#tabline#formatter = 'jsformatter'
 " our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
 
 let g:LanguageClient_autoStart = 1
+let g:LanguageClient_rootMarkers = {
+    \ 'elixir': ['mix.exs'],
+    \ }
 let g:LanguageClient_serverCommands = {
   \ 'python': ['pyls'],
   \ 'typescript': ['javascript-typescript-stdio'],
   \ 'javascript': ['javascript-typescript-stdio'],
-  \ 'javascript.jsx': ['javascript-typescript-stdio']
+  \ 'javascript.jsx': ['javascript-typescript-stdio'],
+  \ 'elixir': ['elixir-ls'],
+  \ 'scala': ['/Users/jbramley/.nvm/versions/node/v11.9.0/bin/node', expand('/Users/jbramley/Code/tools/sbt-server-stdio.js')],
   \ }
 "
 
@@ -202,22 +214,22 @@ let g:LanguageClient_loggingFile =  expand('~/.local/share/nvim/LanguageClient.l
 let g:LanguageClient_serverStderr = expand('~/.local/share/nvim/LanguageServer.log')
 let g:LanguageClient_loggingLevel = 'DEBUG'
 
-augroup ncm2
-  au!
-  autocmd BufEnter * call ncm2#enable_for_buffer()
-  au User Ncm2PopupOpen set completeopt=noinsert,menuone,noselect
-  au User Ncm2PopupClose set completeopt=menuone
-augroup END
+" augroup ncm2
+"   au!
+"   autocmd BufEnter * call ncm2#enable_for_buffer()
+"   au User Ncm2PopupOpen set completeopt=noinsert,menuone,noselect
+"   au User Ncm2PopupClose set completeopt=menuone
+" augroup END
 
 " parameter expansion for selected entry via Enter
-inoremap <silent> <expr> <CR> (pumvisible() ? ncm2_ultisnips#expand_or("\<CR>", 'n') : "\<CR>")
+" inoremap <silent> <expr> <CR> (pumvisible() ? ncm2_ultisnips#expand_or("\<CR>", 'n') : "\<CR>")
 
 " cycle through completion entries with tab/shift+tab
-inoremap <expr> <TAB> pumvisible() ? "\<c-n>" : "\<TAB>"
-inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<TAB>"
+" inoremap <expr> <TAB> pumvisible() ? "\<c-n>" : "\<TAB>"
+" inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<TAB>"
 
 " ncm2 settings
-autocmd BufEnter * call ncm2#enable_for_buffer()
+" autocmd BufEnter * call ncm2#enable_for_buffer()
 " set completeopt=menuone,noselect,noinsert
 set shortmess+=c
 inoremap <c-c> <ESC>
@@ -234,4 +246,49 @@ function! CleverTab()
 	  return "\<C-N>"
    endif
 endfunction
-inoremap <Tab> <C-R>=CleverTab()<CR>
+" inoremap <Tab> <C-R>=CleverTab()<CR>
+
+" Playing with CoC
+
+" Use K for show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if &filetype == 'vim'
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+let g:UltiSnipsExpandTrigger='<Nop>'
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#rpc#request('doKeymap', ['snippets-expand', "\<TAB>"])
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
+
+" imap <tab> <Plug>(coc-snippets-expand)
+" let g:coc_snippet_next = '<TAB>'
+
+
+" Close preview window when completion is done
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
