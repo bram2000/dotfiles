@@ -18,10 +18,8 @@ dotfiles_files:
   - .globalrc
 
 homebrew_installed_packages:
-  - autoconf
-  - zsh
-  - zsh-syntax-highlighting
-  - z
+  - neovim
+  - asdf
   - fish
   - git
   - go
@@ -29,7 +27,6 @@ homebrew_installed_packages:
   - httpie
   - libevent
   - nmap
-  - nvm
   - ssh-copy-id
   - readline
   - openssl
@@ -53,7 +50,10 @@ homebrew_installed_packages:
   - bat
   - fd
   - tree
-  - keycastr
+  - tidy-html5
+  - mas
+  - youtube-dl
+  - fzf
   - { name: ffmpeg, install_options: "with-openssl, with-fdk-aac, with-x265, with-libvpx" }
   - { name: libav, install_options: "with-openssl" }
   - { name: global, install_options: "with-pygments, with-ctags" }
@@ -61,12 +61,11 @@ homebrew_installed_packages:
 
 homebrew_taps:
   - homebrew/core
-  - caskroom/cask
-  - caskroom/fonts
+  - homebrew/cask-fonts
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - blue-jeans
+  - aerial
   - docker
   - firefox
   - google-chrome
@@ -77,7 +76,7 @@ homebrew_cask_apps:
   - launchbar
   - little-snitch
   - spectacle
-  - dash3
+  - dash
   - tunnelblick
   - keybase
   - spotify
@@ -85,7 +84,6 @@ homebrew_cask_apps:
   - visual-studio-code
   - postman
   - font-fantasquesansmono-nerd-font-mono
-  - tidy-html5
   - vlc
   - macpass
   - dropbox
@@ -98,6 +96,8 @@ homebrew_cask_apps:
   - xld
   - gimp
   - audio-hijack
+  - keycastr
+  - vcv-rack
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: 
@@ -109,7 +109,6 @@ mas_installed_apps:
   - { id: 568494494, name: "Pocket (1.7.5)" }
   - { id: 412754595, name: "SoundCloud (1.3.2)" }
   - { id: 411643860, name: "DaisyDisk (4.5)" }
-  - { id: 972028355, name: "Micro Snitch (1.2)" }
   - { id: 552383089, name: "Dashlane (5.10.0)" }
   - { id: 972028355, name: "Micro Snitch (4.2)" }
     #mas_signin_dialog: yes
@@ -144,7 +143,6 @@ pip_packages:
     - autoflake
     - isort
     - aws-fuzzy-finder
-    - youtube-dl
   # - name: mkdocs
   #   state: present # present/absent/latest, default: present
   #   version: "0.16.3" # default: N/A
