@@ -103,6 +103,7 @@ noremap <F5> :diffupdate<CR>
 map sq :bd<CR>
 map <Leader><Enter> :Buffers<CR>
 nmap <Leader>d <Plug>(coc-definition)
+noremap <Leader>c :Gdiff<CR>
 noremap <Leader>g :GFiles<CR>
 noremap <Leader>f :Files<CR>
 noremap <Leader>t :Tags<CR>
