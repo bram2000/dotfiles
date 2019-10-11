@@ -1,5 +1,5 @@
-let g:python_host_prog = "/Users/" . $USER . "/.pyenv/versions/neovim2/bin/python"
-let g:python3_host_prog = "/Users/" . $USER . "/.pyenv/versions/neovim3/bin/python"
+let g:python_host_prog = "/Users/" . $USER . "/.venv/neovim2/bin/python"
+let g:python3_host_prog = "/Users/" . $USER . "/.venv/neovim3/bin/python"
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
@@ -40,13 +40,14 @@ call plug#begin('~/.vim/plugged')
     Plug 'w0rp/ale'
     Plug 'chrisbra/csv.vim'
     Plug 'reinh/vim-makegreen'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 
 " Appearance
 set background=dark
-colorscheme one
-let g:airline_theme='one'
+colorscheme gruvbox
+" let g:airline_theme='gruvbox'
 set relativenumber
 set number
 set showtabline=2
@@ -101,6 +102,7 @@ noremap <F5> :diffupdate<CR>
 
 map sq :bd<CR>
 map <Leader><Enter> :Buffers<CR>
+nmap <Leader>d <Plug>(coc-definition)
 noremap <Leader>g :GFiles<CR>
 noremap <Leader>f :Files<CR>
 noremap <Leader>t :Tags<CR>
@@ -112,7 +114,7 @@ noremap <Leader>e :Explore<CR>
 noremap <Leader>s :Sexplore<CR>
 nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
 nnoremap <silent> <Leader>gs :Gstatus<CR>:20wincmd_<CR>
-nmap <silent> <leader>d <Plug>DashSearch
+" nmap <silent> <leader>d <Plug>DashSearch
 
 nmap <Leader>1 <Plug>lightline#bufferline#go(1)
 nmap <Leader>2 <Plug>lightline#bufferline#go(2)
@@ -133,4 +135,6 @@ let g:tagbar_zoomwidth = 0
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'jsformatter'
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#coc#enabled = 1
