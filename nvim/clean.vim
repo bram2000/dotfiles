@@ -98,6 +98,7 @@ command! -range FormatPythonDictAsJson <line1>,<line2>call FormatPythonDictAsJso
 
 " Mappings
 noremap <F2> :TagbarToggle<CR>
+noremap <F4> :CocCommand<CR>
 noremap <F5> :diffupdate<CR>
 
 map sq :bd<CR>
@@ -110,7 +111,8 @@ noremap <Leader>t :Tags<CR>
 noremap <Leader>b :Buffers<CR>
 noremap <Leader>o <ESC>:only<CR>
 noremap <Leader>m <ESC>:exec &mouse!=""? "set mouse=" : "set mouse=nv"<CR>
-noremap <Leader>l :ALEFix<CR>
+xmap <Leader>l <Plug>(coc-format-selected)
+nmap <Leader>l :call CocAction('format')<CR>
 noremap <Leader>e :Explore<CR>
 noremap <Leader>s :Sexplore<CR>
 nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
