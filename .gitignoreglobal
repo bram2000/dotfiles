@@ -16,3 +16,4 @@ GRTAGS
 GTAGS
 .tern-project
 .tool-versions
+.vim
