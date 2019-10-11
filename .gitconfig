@@ -2,19 +2,19 @@
 [user]
 # Please adapt and uncomment the following lines:
 	name = Jon Bramley
-	email = jon.bramley@made.com
+	email = jon.bramley@sainsburys.co.uk
 [web]
 	browser = open
 [core]
 	excludesfile = ~/.gitignoreglobal
 [merge]
-    tool = vimdiff
+	tool = vimdiff
 	conflictstyle = diff3
 [mergetool "vimdiff"]
 	cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 	prompt = false
 [diff]
-    tool = vimdiff
+	tool = vimdiff
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
