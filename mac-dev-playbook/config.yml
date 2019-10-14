@@ -84,6 +84,7 @@ homebrew_cask_apps:
   - visual-studio-code
   - postman
   - font-fantasquesansmono-nerd-font-mono
+  - font-fira-code
   - vlc
   - macpass
   - dropbox
@@ -98,6 +99,7 @@ homebrew_cask_apps:
   - audio-hijack
   - keycastr
   - vcv-rack
+  - ableton-live-suite
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: 
