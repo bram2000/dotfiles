@@ -101,6 +101,7 @@ homebrew_cask_apps:
   - gimp
   - audio-hijack
   - keycastr
+  - drawio
   - vcv-rack
   - ableton-live-suite
 
