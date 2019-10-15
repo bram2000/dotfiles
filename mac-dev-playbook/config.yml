@@ -57,9 +57,9 @@ homebrew_installed_packages:
   - fzf
   - jq
   - jid
+  - global
   - { name: ffmpeg, install_options: "with-openssl, with-fdk-aac, with-x265, with-libvpx" }
   - { name: libav, install_options: "with-openssl" }
-  - { name: global, install_options: "with-pygments, with-ctags" }
   - { name: gnu-sed, install_options: "with-default-names" }
 
 homebrew_taps:
