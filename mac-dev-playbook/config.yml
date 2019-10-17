@@ -62,6 +62,7 @@ homebrew_installed_packages:
   - ffmpeg
   - libav
   - coreutils
+  - tldr
 
 homebrew_taps:
   - homebrew/core
