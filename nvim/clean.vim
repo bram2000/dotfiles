@@ -4,6 +4,9 @@ let g:python3_host_prog = "/Users/" . $USER . "/.venv/neovim3/bin/python"
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 
+" Some plugins don't play nicely with fish shell
+set shell=bash\ -i
+
 " Plugins
 call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-rhubarb'
@@ -27,6 +30,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'haishanh/night-owl.vim'
     Plug 'godlygeek/tabular'
     Plug 'plasticboy/vim-markdown'
+    Plug 'suan/vim-instant-markdown'
     Plug 'vim-airline/vim-airline'
     Plug 'airblade/vim-gitgutter'
     Plug '/usr/local/opt/fzf'
