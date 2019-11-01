@@ -1,3 +1,12 @@
 {
-    "python.formatting.provider": "yapf"
+    "python.formatting.provider": "yapf",
+    "languageserver": {
+        "terraform": {
+            "command": "/Users/jon.bramley/Code/tools/terraform-lsp/terraform-lsp",
+            "filetypes": [
+                "terraform"
+            ],
+            "initializationOptions": {}
+        }
+    }
 }
