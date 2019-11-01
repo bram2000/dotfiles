@@ -56,6 +56,7 @@ homebrew_installed_packages:
   - mas
   - youtube-dl
   - fzf
+  - jmespath/jmespath/jp
   - jq
   - jid
   - global
@@ -67,6 +68,8 @@ homebrew_installed_packages:
 homebrew_taps:
   - homebrew/core
   - homebrew/cask-fonts
+  - jmespath/jmespath
+
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
