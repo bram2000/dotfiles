@@ -7,6 +7,7 @@ end
 set theme_color_scheme gruvbox
 
 . ~/.asdf/asdf.fish
+. ~/.asdf/plugins/java/set-java-home.fish
 
 # Proxy required for Sainsbury's
 proxy_on
