@@ -123,7 +123,7 @@ map sq :bd<CR>
 map <Leader><Enter> :Buffers<CR>
 nmap <silent> <Leader>d <Plug>(coc-definition)
 nmap <silent> <Leader>r <Plug>(coc-references)
-noremap <Leader>c :Gdiff<CR>
+noremap <Leader>c :Gvdiff<CR>
 noremap <Leader>g :GFiles<CR>
 noremap <Leader>f :Files<CR>
 noremap <Leader>t :Tags<CR>
@@ -131,13 +131,10 @@ noremap <Leader>b :Buffers<CR>
 noremap <Leader>o <ESC>:only<CR>
 noremap <Leader>m <ESC>:exec &mouse!=""? "set mouse=" : "set mouse=nv"<CR>
 xmap <Leader>l <Plug>(coc-format-selected)
-nmap <Leader>l :call CocAction('format')<CR>
 " noremap <Leader>l :ALEFix<CR>
-" noremap <Leader>l :Format<CR>
+nnoremap <Leader>l :Format<CR>
 noremap <Leader>e :Explore<CR>
 noremap <Leader>s :Sexplore<CR>
-noremap <Leader>c :Gvdiff<CR>
-noremap <Leader>w :set diffopt+=iwhite<CR>
 noremap <Leader>w :call IwhiteToggle()<CR>
 nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
 nnoremap <silent> <Leader>gs :Gstatus<CR>:20wincmd_<CR>
@@ -168,10 +165,6 @@ let g:airline#extensions#coc#enabled = 1
 
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_conceal = 0
-
-
 " Ultisnips
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
@@ -182,3 +175,8 @@ let g:UltiSnipsJumpForwardTrigger='<c-j>'
 
 " shortcut to go to previous position
 let g:UltiSnipsJumpBackwardTrigger='<c-k>'
+
+" Markdown
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_folding_disabled = 1
+let g:instant_markdown_autostart = 0

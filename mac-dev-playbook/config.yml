@@ -73,6 +73,7 @@ homebrew_taps:
   - homebrew/core
   - homebrew/cask-fonts
   - jmespath/jmespath
+  - bram2000/homebrew-custom
 
 
 homebrew_cask_appdir: /Applications
