@@ -21,6 +21,10 @@ homebrew_installed_packages:
   - neovim
   - asdf
   - fish
+  - autoconf
+  - zsh
+  - zsh-syntax-highlighting
+  - z
   - git
   - hub
   - go

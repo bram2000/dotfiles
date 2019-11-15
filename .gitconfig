@@ -20,3 +20,6 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[credential]
+	UseHttpPath = true
+	helper = !aws --profile txp-sandbox codecommit credential-helper $@

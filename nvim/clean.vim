@@ -41,17 +41,19 @@ call plug#begin('~/.vim/plugged')
     Plug 'Yggdroot/indentLine'
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
-    Plug 'w0rp/ale'
+    " Plug 'w0rp/ale'
     Plug 'chrisbra/csv.vim'
     Plug 'reinh/vim-makegreen'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
+    Plug 'darfink/vim-plist'
 call plug#end()
 
 
 " Appearance
 set background=dark
 colorscheme gruvbox
-" let g:airline_theme='gruvbox'
+let g:airline_theme='gruvbox'
 set relativenumber
 set number
 set showtabline=2
@@ -100,6 +102,18 @@ endfunction
 command! -range FormatPythonDictAsJson <line1>,<line2>call FormatPythonDictAsJson()
 
 
+function! IwhiteToggle()
+    if &diffopt =~ 'iwhite'
+        set diffopt-=iwhite
+    else
+        set diffopt+=iwhite
+    endif
+endfunction
+
+
+" Use `:Format` to format current buffer
+command! -nargs=0 Format :call CocAction('format')
+
 " Mappings
 noremap <F2> :TagbarToggle<CR>
 noremap <F4> :CocCommand<CR>
@@ -118,8 +132,13 @@ noremap <Leader>o <ESC>:only<CR>
 noremap <Leader>m <ESC>:exec &mouse!=""? "set mouse=" : "set mouse=nv"<CR>
 xmap <Leader>l <Plug>(coc-format-selected)
 nmap <Leader>l :call CocAction('format')<CR>
+" noremap <Leader>l :ALEFix<CR>
+" noremap <Leader>l :Format<CR>
 noremap <Leader>e :Explore<CR>
 noremap <Leader>s :Sexplore<CR>
+noremap <Leader>c :Gvdiff<CR>
+noremap <Leader>w :set diffopt+=iwhite<CR>
+noremap <Leader>w :call IwhiteToggle()<CR>
 nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
 nnoremap <silent> <Leader>gs :Gstatus<CR>:20wincmd_<CR>
 " nmap <silent> <leader>d <Plug>DashSearch
@@ -146,3 +165,20 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#coc#enabled = 1
+
+autocmd FileType json syntax match Comment +\/\/.\+$+
+
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_conceal = 0
+
+
+" Ultisnips
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger='<tab>'
+
+" shortcut to go to next position
+let g:UltiSnipsJumpForwardTrigger='<c-j>'
+
+" shortcut to go to previous position
+let g:UltiSnipsJumpBackwardTrigger='<c-k>'

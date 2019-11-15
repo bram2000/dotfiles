@@ -17,3 +17,5 @@ GTAGS
 .tern-project
 .tool-versions
 .vim
+.metals
+**/.bloop/
