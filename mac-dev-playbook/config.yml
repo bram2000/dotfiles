@@ -59,6 +59,7 @@ homebrew_installed_packages:
   - tidy-html5
   - mas
   - youtube-dl
+  - axel
   - fzf
   - jmespath/jmespath/jp
   - jq
