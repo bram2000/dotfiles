@@ -35,6 +35,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'airblade/vim-gitgutter'
     Plug '/usr/local/opt/fzf'
     Plug 'junegunn/fzf.vim'
+    Plug 'yuki-ycino/fzf-preview.vim'
+    Plug 'bogado/file-line'
     Plug 'machakann/vim-highlightedyank'
     Plug 'sheerun/vim-polyglot'
     Plug 'majutsushi/tagbar'
@@ -125,10 +127,10 @@ map <Leader><Enter> :Buffers<CR>
 nmap <silent> <Leader>d <Plug>(coc-definition)
 nmap <silent> <Leader>r <Plug>(coc-references)
 noremap <Leader>c :Gvdiff<CR>
-noremap <Leader>g :GFiles<CR>
-noremap <Leader>f :Files<CR>
+noremap <Leader>g :FzfPreviewGitFiles<CR>
+noremap <Leader>f :FzfPreviewProjectFiles<CR>
 noremap <Leader>t :Tags<CR>
-noremap <Leader>b :Buffers<CR>
+noremap <Leader>b :FzfPreviewBuffers<CR>
 noremap <Leader>o <ESC>:only<CR>
 noremap <Leader>m <ESC>:exec &mouse!=""? "set mouse=" : "set mouse=nv"<CR>
 xmap <Leader>l <Plug>(coc-format-selected)
@@ -183,6 +185,9 @@ let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 let g:vim_markdown_conceal = 0
 let g:vim_markdown_folding_disabled = 1
 let g:instant_markdown_autostart = 0
+
+" FZF preview options
+let g:fzf_preview_filelist_command = 'rg --files --hidden --follow --no-messages -g \!"* *"'
 
 " Move to last cursor position on file open (:help restore-cursor)
 autocmd BufReadPost *
