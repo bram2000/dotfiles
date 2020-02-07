@@ -49,6 +49,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
     Plug 'darfink/vim-plist'
+    Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 
@@ -73,7 +74,7 @@ set cursorcolumn
 set cursorline
 set hidden
 set clipboard=unnamedplus
-set grepprg=ag\ --nogroup\ --nocolor
+set grepprg=rg\ --vimgrep
 set completeopt=longest,menuone
 set sessionoptions+=globals
 
@@ -188,6 +189,9 @@ let g:instant_markdown_autostart = 0
 
 " FZF preview options
 let g:fzf_preview_filelist_command = 'rg --files --hidden --follow --no-messages -g \!"* *"'
+let g:fzf_preview_command = 'ccat --color=always {-1}'
+let g:fzf_preview_filelist_postprocess_command = 'gxargs -d "\n" exa --color=always'
+let g:fzf_preview_use_dev_icons = 1
 
 " Move to last cursor position on file open (:help restore-cursor)
 autocmd BufReadPost *
