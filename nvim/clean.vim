@@ -73,6 +73,7 @@ set hidden
 set clipboard=unnamedplus
 set grepprg=ag\ --nogroup\ --nocolor
 set completeopt=longest,menuone
+set sessionoptions+=globals
 
 " let <Enter> accpet a match in completion menu
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -153,6 +154,8 @@ nmap <Leader>0 <Plug>lightline#bufferline#go(10)
 
 " Netrw
 let g:netrw_liststyle = 3
+let g:netrw_fastbrowse = 0
+autocmd FileType netrw setl bufhidden=wipe
 
 " Tagbar
 let g:tagbar_zoomwidth = 0
@@ -180,3 +183,9 @@ let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 let g:vim_markdown_conceal = 0
 let g:vim_markdown_folding_disabled = 1
 let g:instant_markdown_autostart = 0
+
+" Move to last cursor position on file open (:help restore-cursor)
+autocmd BufReadPost *
+  \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+  \ |   exe "normal! g`\""
+  \ | endif
