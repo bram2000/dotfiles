@@ -26,6 +26,7 @@ homebrew_installed_packages:
   - zsh-syntax-highlighting
   - z
   - git
+  - tig
   - hub
   - go
   - gpg
