@@ -39,6 +39,7 @@ homebrew_installed_packages:
   - pv
   - wget
   - wrk
+  - ripgrep
   - ag
   - pyenv
   - pyenv-virtualenv
