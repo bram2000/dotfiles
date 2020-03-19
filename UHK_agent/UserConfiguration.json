@@ -667,7 +667,7 @@
               "keyActions": [
                 {
                   "keyActionType": "switchKeymap",
-                  "keymapAbbreviation": "BRA"
+                  "keymapAbbreviation": "BAM"
                 },
                 {
                   "keyActionType": "switchKeymap",
@@ -1668,7 +1668,7 @@
               "keyActions": [
                 {
                   "keyActionType": "switchKeymap",
-                  "keymapAbbreviation": "BRA"
+                  "keymapAbbreviation": "BAM"
                 },
                 {
                   "keyActionType": "switchKeymap",
@@ -2658,7 +2658,7 @@
               "keyActions": [
                 {
                   "keyActionType": "switchKeymap",
-                  "keymapAbbreviation": "BRA"
+                  "keymapAbbreviation": "BAM"
                 },
                 {
                   "keyActionType": "switchKeymap",
@@ -3656,7 +3656,7 @@
               "keyActions": [
                 {
                   "keyActionType": "switchKeymap",
-                  "keymapAbbreviation": "BRA"
+                  "keymapAbbreviation": "BAM"
                 },
                 {
                   "keyActionType": "switchKeymap",
@@ -3997,7 +3997,7 @@
     },
     {
       "isDefault": true,
-      "abbreviation": "BRA",
+      "abbreviation": "BAM",
       "name": "QWERTY Bram",
       "description": "Bram's personal layout - based on QWERTY",
       "layers": [
@@ -4185,7 +4185,7 @@
                 {
                   "keyActionType": "keystroke",
                   "type": "basic",
-                  "scancode": 41
+                  "scancode": 100
                 },
                 {
                   "keyActionType": "keystroke",
@@ -4287,7 +4287,7 @@
                 {
                   "keyActionType": "keystroke",
                   "type": "basic",
-                  "scancode": 100
+                  "scancode": 53
                 },
                 {
                   "keyActionType": "keystroke",
@@ -5626,7 +5626,7 @@
               "keyActions": [
                 {
                   "keyActionType": "switchKeymap",
-                  "keymapAbbreviation": "BRA"
+                  "keymapAbbreviation": "BAM"
                 },
                 {
                   "keyActionType": "switchKeymap",
@@ -6618,7 +6618,7 @@
               "keyActions": [
                 {
                   "keyActionType": "switchKeymap",
-                  "keymapAbbreviation": "BRA"
+                  "keymapAbbreviation": "BAM"
                 },
                 {
                   "keyActionType": "switchKeymap",
@@ -7606,7 +7606,7 @@
               "keyActions": [
                 {
                   "keyActionType": "switchKeymap",
-                  "keymapAbbreviation": "BRA"
+                  "keymapAbbreviation": "BAM"
                 },
                 null,
                 null,
@@ -8587,7 +8587,7 @@
               "keyActions": [
                 {
                   "keyActionType": "switchKeymap",
-                  "keymapAbbreviation": "BRA"
+                  "keymapAbbreviation": "BAM"
                 },
                 {
                   "keyActionType": "switchKeymap",
