@@ -119,6 +119,7 @@ homebrew_cask_apps:
   - hazeover
   - vcv-rack
   - ableton-live-suite
+  - beardedspice
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: 
