@@ -72,12 +72,14 @@ homebrew_installed_packages:
   - coreutils
   - tldr
   - findutils
+  - csvkit
 
 homebrew_taps:
   - homebrew/core
   - homebrew/cask-fonts
   - jmespath/jmespath
   - bram2000/homebrew-custom
+  - heroku/brew
 
 
 homebrew_cask_appdir: /Applications
@@ -120,6 +122,7 @@ homebrew_cask_apps:
   - vcv-rack
   - ableton-live-suite
   - beardedspice
+  - heroku
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: 
