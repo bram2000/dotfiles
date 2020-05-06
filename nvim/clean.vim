@@ -191,6 +191,7 @@ let g:indentLine_fileTypeExclude = ['markdown']
 " FZF preview options
 let g:fzf_preview_filelist_command = 'rg --files --hidden --follow --no-messages -g \!"* *"'
 let g:fzf_preview_command = 'ccat --color=always {-1}'
+let g:fzf_preview_if_binary_command = "string match 'binary' (file --mime {})"
 let g:fzf_preview_filelist_postprocess_command = 'gxargs -d "\n" exa --color=always'
 " let g:fzf_preview_use_dev_icons = 1
 
