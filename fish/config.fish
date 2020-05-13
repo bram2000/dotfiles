@@ -6,9 +6,7 @@ end
 
 set theme_color_scheme gruvbox
 
-. ~/.asdf/asdf.fish
-. ~/.asdf/plugins/java/set-java-home.fish
+source ~/.asdf/asdf.fish
+source ~/.iterm2_shell_integration.(basename $SHELL)
+source ~/.asdf/plugins/java/asdf-java-wrapper.fish
 # set -x JAVA_HOME (/usr/libexec/java_home -v 1.8)
-
-# Proxy required for Sainsbury's
-proxy_on
