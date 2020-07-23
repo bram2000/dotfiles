@@ -50,6 +50,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
     Plug 'darfink/vim-plist'
     " Plug 'ryanoasis/vim-devicons'
+    Plug 'moll/vim-bbye'
 call plug#end()
 
 
