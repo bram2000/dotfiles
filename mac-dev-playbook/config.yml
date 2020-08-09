@@ -73,6 +73,8 @@ homebrew_installed_packages:
   - tldr
   - findutils
   - csvkit
+  - libpq
+  - grc
 
 homebrew_taps:
   - homebrew/core
@@ -123,6 +125,10 @@ homebrew_cask_apps:
   - ableton-live-suite
   - beardedspice
   - heroku
+  - vanilla
+  - fantastical
+  - macdown
+  - surge-synthesizer
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: 
