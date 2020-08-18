@@ -75,6 +75,7 @@ homebrew_installed_packages:
   - csvkit
   - libpq
   - grc
+  - docker-completion
 
 homebrew_taps:
   - homebrew/core
