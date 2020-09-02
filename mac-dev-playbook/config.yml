@@ -76,6 +76,13 @@ homebrew_installed_packages:
   - libpq
   - grc
   - docker-completion
+  - speedread
+  - speedtest-cli
+  - dark-mode
+  - pandoc
+  - pandoc-citeproc
+  - pandoc-crossref
+  - pandoc-include-code
 
 homebrew_taps:
   - homebrew/core
@@ -130,6 +137,7 @@ homebrew_cask_apps:
   - fantastical
   - macdown
   - surge-synthesizer
+  - basictex
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: 
