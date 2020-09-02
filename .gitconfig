@@ -23,3 +23,5 @@
 ; [credential]
 ; 	UseHttpPath = true
 ; 	helper = !aws --profile txp-sandbox codecommit credential-helper $@
+[credential]
+	helper = osxkeychain
