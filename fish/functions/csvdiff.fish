@@ -1,8 +1,17 @@
-function csvdiff --argument file1 file2 columns
+# Defined in /var/folders/6p/8kl8_gt54jv2vsgw_8brmpdm0000gn/T//fish.jq4GEA/csvdiff.fish @ line 2
+function csvdiff --argument file1 file2 columns ignore
 set cut_arg ""
-if [ (count $argv) -eq 3 ]
-set cut_arg -c "$columns"
-else if [ (count $argv) -ne 2 ]
+if [ (count $argv) -gt 2 ]
+    if test "$columns" = "auto"
+        if test -n "$ignore"
+            set cut_arg -c (csvcut -n $file1 | awk '{print $2}' | grep -v "$ignore" | paste -d ',' -s -)
+        else
+            set cut_arg -c (csvcut -n $file1 | awk '{print $2}' | paste -d ',' -s -)
+        end
+    else
+        set cut_arg -c "$columns"
+    end
+else if [ (count $argv) -lt 2 ]
 echo "expected exactly two files to compare"
 return 1
 end
