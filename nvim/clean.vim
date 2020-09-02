@@ -50,6 +50,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'darfink/vim-plist'
     " Plug 'ryanoasis/vim-devicons'
     Plug 'moll/vim-bbye'
+    Plug 'mileszs/ack.vim'
     Plug 'vim-pandoc/vim-pandoc'
     Plug 'vim-pandoc/vim-pandoc-syntax'
 call plug#end()
@@ -76,7 +77,10 @@ set cursorcolumn
 set cursorline
 set hidden
 set clipboard=unnamedplus
-set grepprg=rg\ --vimgrep
+if executable('rg')
+    set grepprg='rg\ --vimgrep'
+    let g:ackprg = 'rg --vimgrep'
+endif
 set completeopt=longest,menuone
 set sessionoptions+=globals
 
@@ -126,6 +130,7 @@ noremap <F4> :CocCommand<CR>
 noremap <F5> :diffupdate<CR>
 
 map sq :bd<CR>
+noremap <Leader>q :Bdelete<CR>
 map <Leader><Enter> :Buffers<CR>
 nmap <silent> <Leader>d <Plug>(coc-definition)
 nmap <silent> <Leader>r <Plug>(coc-references)
@@ -142,7 +147,7 @@ nnoremap <Leader>l :Format<CR>
 noremap <Leader>e :Explore<CR>
 noremap <Leader>s :Sexplore<CR>
 noremap <Leader>w :call IwhiteToggle()<CR>
-nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
+nnoremap <silent> <Leader>ag :Ack <C-R><C-W><CR>
 nnoremap <silent> <Leader>gs :Gstatus<CR>:20wincmd_<CR>
 " nmap <silent> <leader>d <Plug>DashSearch
 
