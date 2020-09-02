@@ -201,3 +201,18 @@ autocmd BufReadPost *
   \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
   \ |   exe "normal! g`\""
   \ | endif
+
+" Automatically switch the background colour when dark-mode is toggled
+function! SetBackgroundMode(...)
+    let s:dark_mode = systemlist("dark-mode status")[0]
+    if s:dark_mode ==? "on"
+        let s:new_bg = "dark"
+    else
+        let s:new_bg = "light"
+    endif
+    if &background !=? s:new_bg
+        let &background = s:new_bg
+    endif
+endfunction
+call SetBackgroundMode()
+call timer_start(10000, "SetBackgroundMode", {"repeat": -1})
