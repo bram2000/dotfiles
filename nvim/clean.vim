@@ -33,9 +33,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'suan/vim-instant-markdown'
     Plug 'vim-airline/vim-airline'
     Plug 'airblade/vim-gitgutter'
-    Plug '/usr/local/opt/fzf'
-    Plug 'junegunn/fzf.vim'
-    Plug 'yuki-ycino/fzf-preview.vim'
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
     Plug 'bogado/file-line'
     Plug 'machakann/vim-highlightedyank'
     Plug 'sheerun/vim-polyglot'
