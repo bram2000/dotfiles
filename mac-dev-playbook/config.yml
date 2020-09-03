@@ -83,6 +83,7 @@ homebrew_installed_packages:
   - pandoc-citeproc
   - pandoc-crossref
   - pandoc-include-code
+  - plantuml
 
 homebrew_taps:
   - homebrew/core
@@ -138,6 +139,8 @@ homebrew_cask_apps:
   - macdown
   - surge-synthesizer
   - basictex
+  - sonic-visualiser
+  - discord
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: 
