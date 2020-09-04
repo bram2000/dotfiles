@@ -1,4 +1,4 @@
-# Defined in /var/folders/6p/8kl8_gt54jv2vsgw_8brmpdm0000gn/T//fish.v3et1C/csvdiffd.fish @ line 2
+# Defined in /var/folders/6p/8kl8_gt54jv2vsgw_8brmpdm0000gn/T//fish.6bhMI1/csvdiffd.fish @ line 2
 function csvdiffd --argument src dest cut ignore
 set file_list (ls $src/*.csv)
 set total (echo $file_list | wc -w | string trim)
@@ -18,7 +18,11 @@ echo "$total files to compare in total [auto_cut is $auto_cut]"
 for f in $file_list
     set filename (basename $f)
     if test "$auto_cut" = "on"
-        set columns (csvcut -n $f | grep -v "$ignore" | awk '{print $2}' | paste -d ',' -s -)
+        if test -n "$ignore"
+            set columns (csvcut -n $f | grep -v "$ignore" | awk '{print $2}' | paste -d ',' -s -)
+        else
+            set columns (csvcut -n $f | awk '{print $2}' | paste -d ',' -s -)
+        end
     end
 
     if test -f $dest/$filename
