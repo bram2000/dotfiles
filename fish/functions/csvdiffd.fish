@@ -38,11 +38,11 @@ for f in $file_list
         set skipped (math "$skipped + 1")
     end
     set checked (math "$checked + 1")
-    echo "$checked comparisons completed [of $total]"
+    echo "$checked ($skipped skipped) comparisons completed [of $total]"
 end
 if test $differences -gt 1
     echo "differences were found when comparing the following files:"
     echo "$problems" | tr ' ' '\n'
 end
-echo "$differences differences found in $total comparisons"
+echo "$differences differences found in $total comparisons, $skipped files skipped"
 end
