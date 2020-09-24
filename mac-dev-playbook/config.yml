@@ -84,6 +84,7 @@ homebrew_installed_packages:
   - pandoc-crossref
   - pandoc-include-code
   - plantuml
+  - gdal
 
 homebrew_taps:
   - homebrew/core
@@ -141,6 +142,7 @@ homebrew_cask_apps:
   - basictex
   - sonic-visualiser
   - discord
+  - qgis
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: 
