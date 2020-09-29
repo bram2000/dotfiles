@@ -65,6 +65,8 @@ homebrew_installed_packages:
   - fzf
   - jmespath/jmespath/jp
   - jq
+  - yq
+  - yamllint
   - jid
   - global
   - ffmpeg
@@ -85,6 +87,7 @@ homebrew_installed_packages:
   - pandoc-include-code
   - plantuml
   - gdal
+  - heroku
 
 homebrew_taps:
   - homebrew/core
@@ -114,7 +117,7 @@ homebrew_cask_apps:
   - evernote
   - visual-studio-code
   - postman
-  - font-fantasquesansmono-nerd-font-mono
+  - font-fantasque-sans-mono-nerd-font
   - font-fira-code
   - vlc
   - macpass
@@ -134,7 +137,6 @@ homebrew_cask_apps:
   - vcv-rack
   - ableton-live-suite
   - beardedspice
-  - heroku
   - vanilla
   - fantastical
   - macdown
