@@ -88,10 +88,12 @@ homebrew_installed_packages:
   - plantuml
   - gdal
   - heroku
+  - ccat
 
 homebrew_taps:
   - homebrew/core
   - homebrew/cask-fonts
+  - homebrew/cask-drivers
   - jmespath/jmespath
   - bram2000/homebrew-custom
   - heroku/brew
@@ -145,6 +147,7 @@ homebrew_cask_apps:
   - sonic-visualiser
   - discord
   - qgis
+  - uhk-agent
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: 
