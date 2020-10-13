@@ -2,7 +2,8 @@
 [user]
 # Please adapt and uncomment the following lines:
 	name = Jon Bramley
-	email = jon.bramley@sainsburys.co.uk
+	email = brammers@gmail.com
+	signingkey = 941445F910F0AB64
 [web]
 	browser = open
 [core]
