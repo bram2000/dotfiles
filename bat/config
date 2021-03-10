@@ -1,5 +1,5 @@
 # Set the theme to "gruvbox-dark"
-# --theme="gruvbox-light"
+--theme="gruvbox"
 
 # Show Git modifications and file header (but no grid)
 --style="changes,header"
