@@ -53,6 +53,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'mileszs/ack.vim'
     Plug 'vim-pandoc/vim-pandoc'
     Plug 'vim-pandoc/vim-pandoc-syntax'
+    Plug 'rizzatti/dash.vim'
+    Plug 'glench/vim-jinja2-syntax'
 call plug#end()
 
 
@@ -67,6 +69,7 @@ set noshowmode
 
 
 " Behaviour
+set backupcopy=yes  " prevents entr running twice on vim save
 set inccommand=nosplit
 set expandtab
 set tabstop=4
@@ -135,17 +138,19 @@ map <Leader><Enter> :Buffers<CR>
 nmap <silent> <Leader>d <Plug>(coc-definition)
 nmap <silent> <Leader>r <Plug>(coc-references)
 noremap <Leader>c :Gvdiff<CR>
-noremap <Leader>g :FzfPreviewGitFiles<CR>
-noremap <Leader>f :FzfPreviewProjectFiles<CR>
+noremap <Leader>g :CocCommand fzf-preview.GitFiles<CR>
+noremap <Leader>f :CocCommand fzf-preview.ProjectFiles<CR>
 noremap <Leader>t :Tags<CR>
-noremap <Leader>b :FzfPreviewBuffers<CR>
+noremap <Leader>b :CocCommand fzf-preview.Buffers<CR>
 noremap <Leader>o <ESC>:only<CR>
 noremap <Leader>m <ESC>:exec &mouse!=""? "set mouse=" : "set mouse=nv"<CR>
 xmap <Leader>l <Plug>(coc-format-selected)
 " noremap <Leader>l :ALEFix<CR>
 nnoremap <Leader>l :Format<CR>
 noremap <Leader>e :Explore<CR>
-noremap <Leader>s :Sexplore<CR>
+" noremap <Leader>s :Sexplore<CR>
+noremap <Leader>s :CocCommand python.sortImports<CR>
+noremap <Leader>r :CocCommand fzf-preview.CocReferences<CR>
 noremap <Leader>w :call IwhiteToggle()<CR>
 nnoremap <silent> <Leader>ag :Ack <C-R><C-W><CR>
 nnoremap <silent> <Leader>gs :Gstatus<CR>:20wincmd_<CR>
