@@ -8,5 +8,12 @@ set theme_color_scheme gruvbox
 
 source ~/.asdf/asdf.fish
 source ~/.iterm2_shell_integration.(basename $SHELL)
-source ~/.asdf/plugins/java/asdf-java-wrapper.fish
-# set -x JAVA_HOME (/usr/libexec/java_home -v 1.8)
+
+# https://github.com/fish-shell/fish-shell/issues/7575
+# remove this when fish >= 3.2
+# if test (uname) = Darwin
+# 	function __fish_describe_command; end
+# end
+
+# disable ctrl-d shortcut that kills the terminal
+bind \cd true
