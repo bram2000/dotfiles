@@ -19,3 +19,4 @@ GTAGS
 .vim
 .metals
 **/.bloop/
+.venv
