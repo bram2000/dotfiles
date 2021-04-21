@@ -1,4 +1,4 @@
-# Defined in /var/folders/6p/8kl8_gt54jv2vsgw_8brmpdm0000gn/T//fish.jq4GEA/csvdiff.fish @ line 2
+# Defined in /var/folders/4t/fsy6tkf577sg3d5j7vbgtx100000gn/T//fish.RiZUuR/csvdiff.fish @ line 2
 function csvdiff --argument file1 file2 columns ignore
 set cut_arg ""
 if [ (count $argv) -gt 2 ]
@@ -16,8 +16,8 @@ echo "expected exactly two files to compare"
 return 1
 end
 if [ "$cut_arg" = "" ]
-eval vimdiff (cat $file1 | csvlook -I | psub) (cat $file2 | csvlook -I | psub)
+eval nvim -d (cat $file1 | csvlook -I | psub) (cat $file2 | csvlook -I | psub)
 else
-eval vimdiff (cat $file1 | csvcut $cut_arg | csvlook -I | psub) (cat $file2 | csvcut $cut_arg | csvlook -I | psub)
+eval nvim -d (cat $file1 | csvcut $cut_arg | csvlook -I | psub) (cat $file2 | csvcut $cut_arg | csvlook -I | psub)
 end
 end
