@@ -91,6 +91,7 @@ homebrew_installed_packages:
   - ccat
   - gawk
   - gnu-sed
+  - oath-toolkit
 
 homebrew_taps:
   - homebrew/core
