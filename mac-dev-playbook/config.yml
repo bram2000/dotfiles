@@ -92,6 +92,8 @@ homebrew_installed_packages:
   - gawk
   - gnu-sed
   - oath-toolkit
+  - hashicorp/tap/terraform-ls
+  - tmux
 
 homebrew_taps:
   - homebrew/core
