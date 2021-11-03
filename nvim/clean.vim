@@ -5,7 +5,7 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 
 " Some plugins don't play nicely with fish shell
-set shell=bash\ -i
+set shell=/bin/bash
 
 " Plugins
 call plug#begin('~/.vim/plugged')
@@ -32,9 +32,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'plasticboy/vim-markdown'
     Plug 'suan/vim-instant-markdown'
     Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
     Plug 'airblade/vim-gitgutter'
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-    Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/remote', 'do': ':UpdateRemotePlugins' }
     Plug 'bogado/file-line'
     Plug 'machakann/vim-highlightedyank'
     Plug 'sheerun/vim-polyglot'
@@ -132,6 +133,9 @@ noremap <F2> :TagbarToggle<CR>
 noremap <F4> :CocCommand<CR>
 noremap <F5> :diffupdate<CR>
 
+" Ctrl-Space to open completion list
+inoremap <silent><expr> <c-space> coc#refresh()
+
 map sq :bd<CR>
 noremap <Leader>q :Bdelete<CR>
 map <Leader><Enter> :Buffers<CR>
@@ -182,6 +186,7 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#coc#enabled = 1
 
 autocmd FileType json syntax match Comment +\/\/.\+$+
+autocmd BufRead,BufNewFile *.htm,*.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " Ultisnips
 " Trigger configuration. Do not use <tab> if you use
