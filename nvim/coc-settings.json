@@ -12,12 +12,16 @@
             ]
         },
         "terraform": {
-            "command": "/Users/jon.bramley/Code/tools/terraform-lsp/terraform-lsp",
-            "filetypes": [
-                "terraform"
-            ],
-            "initializationOptions": {}
-        },
+			"command": "terraform-ls",
+			"args": ["serve"],
+			"filetypes": [
+				"terraform",
+				"tf"
+			],
+            "trace.server": "verbose",
+			"initializationOptions": {},
+			"settings": {}
+		},
         "bash": {
             "command": "bash-language-server",
             "args": [
