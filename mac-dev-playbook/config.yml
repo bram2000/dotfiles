@@ -28,6 +28,7 @@ homebrew_installed_packages:
   - git
   - tig
   - hub
+  - lab
   - go
   - gpg
   - httpie
@@ -126,6 +127,7 @@ homebrew_cask_apps:
   - postman
   - font-fantasque-sans-mono-nerd-font
   - font-fira-code
+  - font-recursive-code
   - vlc
   - macpass
   - dropbox
@@ -193,6 +195,8 @@ gem_packages: []
   #   version: "~> 1.15.1" # default: N/A
 npm_packages: 
     - eslint-cli
+    - bash-language-server
+    - dockerfile-language-server-nodejs
   # - name: webpack
   #   state: present # present/absent/latest, default: present
   #   version: "^2.6" # default: N/A
