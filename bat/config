@@ -1,5 +1,6 @@
 # Set the theme to "gruvbox-dark"
---theme="gruvbox"
+#--theme="gruvbox-dark"
+# theme is now set via the `bat` shell alias, to switch automatically for dark/light mode
 
 # Show Git modifications and file header (but no grid)
 --style="changes,header"
