@@ -17,3 +17,6 @@ source ~/.iterm2_shell_integration.(basename $SHELL)
 
 # disable ctrl-d shortcut that kills the terminal
 bind \cd true
+
+# lab completions
+lab completion | source
