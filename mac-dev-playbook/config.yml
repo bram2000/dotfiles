@@ -54,7 +54,6 @@ homebrew_installed_packages:
   - awscli
   - aws-shell
   - pstree
-  - unrar
   - fzy
   - bat
   - fd
@@ -83,7 +82,6 @@ homebrew_installed_packages:
   - speedtest-cli
   - dark-mode
   - pandoc
-  - pandoc-citeproc
   - pandoc-crossref
   - pandoc-include-code
   - plantuml
@@ -108,7 +106,7 @@ homebrew_taps:
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - aerial
-  - docker
+  - homebrew/cask/docker
   - firefox
   - google-chrome
   - licecap
@@ -117,8 +115,8 @@ homebrew_cask_apps:
   - iterm2
   - launchbar
   - little-snitch
-  - spectacle
-  - dash
+  - homebrew/cask/rectangle
+  - homebrew/cask/dash
   - tunnelblick
   - keybase
   - spotify
@@ -160,12 +158,11 @@ homebrew_cask_apps:
   - obs
   - midi-monitor
   - paw
-  - wireshark
+  - homebrew/cask/wireshark
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: 
   - { id: 494803304, name: "WiFi Explorer (2.4)" }
-  - { id: 1054607607, name: "Helium (2.0)" }
   - { id: 425424353, name: "The Unarchiver (3.11.5)" }
   - { id: 671736912, name: "FruitJuice (2.3.3)" }
   - { id: 568494494, name: "Pocket (1.7.5)" }

@@ -12,16 +12,22 @@
             ]
         },
         "terraform": {
-			"command": "terraform-ls",
-			"args": ["serve"],
-			"filetypes": [
-				"terraform",
-				"tf"
-			],
+            "command": "terraform-ls",
+            "args": [
+                "serve"
+            ],
+            "filetypes": [
+                "terraform",
+                "tf"
+            ],
             "trace.server": "verbose",
-			"initializationOptions": {},
-			"settings": {}
-		},
+            "initializationOptions": {
+                "experimentalFeatures": {
+                    "prefillRequiredFields": true
+                }
+            },
+            "settings": {}
+        },
         "bash": {
             "command": "bash-language-server",
             "args": [

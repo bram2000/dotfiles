@@ -6,7 +6,8 @@ end
 
 set theme_color_scheme gruvbox
 
-source ~/.asdf/asdf.fish
+# source ~/.asdf/asdf.fish
+source /opt/homebrew/opt/asdf/libexec/asdf.fish
 source ~/.iterm2_shell_integration.(basename $SHELL)
 
 # https://github.com/fish-shell/fish-shell/issues/7575
