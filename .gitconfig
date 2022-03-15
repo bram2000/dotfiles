@@ -5,7 +5,7 @@
 	email = brammers@gmail.com
 	signingkey = 941445F910F0AB64
 [web]
-	browser = open
+	browser = chrome
 [core]
 	excludesfile = ~/.gitignoreglobal
 [merge]
@@ -33,3 +33,5 @@
 	driver = daff merge --output %A %O %A %B
 [init]
 	defaultBranch = main
+[web "browser.chrome"]
+	path = /Applications/Google Chrome.app/
