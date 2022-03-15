@@ -60,6 +60,12 @@
                 "scala",
                 "sbt"
             ]
+        },
+        "nim": {
+            "command": "nimlsp",
+            "filetypes": [
+                "nim"
+            ]
         }
     }
 }

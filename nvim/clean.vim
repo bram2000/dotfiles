@@ -35,7 +35,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline-themes'
     Plug 'airblade/vim-gitgutter'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/remote', 'do': ':UpdateRemotePlugins' }
+    Plug 'neoclide/coc.nvim', { 'branch': 'release' }
     Plug 'bogado/file-line'
     Plug 'machakann/vim-highlightedyank'
     Plug 'sheerun/vim-polyglot'
@@ -47,7 +47,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'chrisbra/csv.vim'
     Plug 'reinh/vim-makegreen'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
     Plug 'darfink/vim-plist'
     " Plug 'ryanoasis/vim-devicons'
     Plug 'moll/vim-bbye'
@@ -56,13 +56,18 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-pandoc/vim-pandoc-syntax'
     Plug 'rizzatti/dash.vim'
     Plug 'glench/vim-jinja2-syntax'
+    Plug 'NLKNguyen/papercolor-theme'
+    Plug 'vim-test/vim-test'
 call plug#end()
 
 
 " Appearance
 set background=dark
-colorscheme gruvbox
-let g:airline_theme='gruvbox'
+" colorscheme gruvbox
+colorscheme PaperColor
+
+" let g:airline_theme='gruvbox'
+let g:airline_theme='papercolor'
 set relativenumber
 set number
 set showtabline=2
@@ -194,10 +199,13 @@ autocmd BufRead,BufNewFile *.htm,*.html setlocal tabstop=2 shiftwidth=2 softtabs
 let g:UltiSnipsExpandTrigger='<tab>'
 
 " shortcut to go to next position
-let g:UltiSnipsJumpForwardTrigger='<c-j>'
+" let g:UltiSnipsJumpForwardTrigger='<c-j>'
 
 " shortcut to go to previous position
-let g:UltiSnipsJumpBackwardTrigger='<c-k>'
+" let g:UltiSnipsJumpBackwardTrigger='<c-k>'
+
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " Markdown
 let g:vim_markdown_conceal = 0
@@ -214,6 +222,10 @@ let g:fzf_preview_filelist_postprocess_command = 'gxargs -d "\n" exa --color=alw
 " Pandoc
 let g:pandoc#biblio#sources="bgy"
 let g:pandoc#command#latex_engine="pdflatex"
+
+" vim-test
+let test#strategy = "neovim"
+let g:test#python#pytest#options = '-vv -s'
 
 " Move to last cursor position on file open (:help restore-cursor)
 autocmd BufReadPost *
