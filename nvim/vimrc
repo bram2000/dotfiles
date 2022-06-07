@@ -30,7 +30,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'haishanh/night-owl.vim'
     Plug 'godlygeek/tabular'
     Plug 'plasticboy/vim-markdown'
-    Plug 'suan/vim-instant-markdown'
+    " Plug 'suan/vim-instant-markdown'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'airblade/vim-gitgutter'
@@ -46,7 +46,6 @@ call plug#begin('~/.vim/plugged')
     " Plug 'w0rp/ale'
     Plug 'chrisbra/csv.vim'
     Plug 'reinh/vim-makegreen'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
     Plug 'darfink/vim-plist'
     " Plug 'ryanoasis/vim-devicons'
@@ -60,6 +59,21 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-test/vim-test'
 call plug#end()
 
+" Coc extensions
+let g:coc_global_extensions = [
+    \ 'coc-yaml',
+    \ 'coc-stylelintplus',
+    \ 'coc-html',
+    \ 'coc-fzf-preview',
+    \ 'coc-eslint',
+    \ 'coc-tsserver',
+    \ 'coc-styled-components',
+    \ 'coc-pyright',
+    \ 'coc-json',
+    \ 'coc-go',
+    \ 'coc-docker',
+    \ 'coc-css'
+\ ]
 
 " Appearance
 set background=dark
@@ -75,6 +89,7 @@ set noshowmode
 
 
 " Behaviour
+set nofoldenable
 set backupcopy=yes  " prevents entr running twice on vim save
 set inccommand=nosplit
 set expandtab
@@ -129,9 +144,19 @@ function! IwhiteToggle()
     endif
 endfunction
 
-
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 
 " Mappings
 noremap <F2> :TagbarToggle<CR>
@@ -141,11 +166,12 @@ noremap <F5> :diffupdate<CR>
 " Ctrl-Space to open completion list
 inoremap <silent><expr> <c-space> coc#refresh()
 
-map sq :bd<CR>
-noremap <Leader>q :Bdelete<CR>
+map sq :Bdelete<CR>
+noremap <Leader>q :Bwipeout<CR>
 map <Leader><Enter> :Buffers<CR>
 nmap <silent> <Leader>d <Plug>(coc-definition)
 nmap <silent> <Leader>r <Plug>(coc-references)
+nmap <silent> <leader>rn <Plug>(coc-rename)
 noremap <Leader>c :Gvdiff<CR>
 noremap <Leader>g :CocCommand fzf-preview.GitFiles<CR>
 noremap <Leader>f :CocCommand fzf-preview.ProjectFiles<CR>
@@ -222,6 +248,7 @@ let g:fzf_preview_filelist_postprocess_command = 'gxargs -d "\n" exa --color=alw
 " Pandoc
 let g:pandoc#biblio#sources="bgy"
 let g:pandoc#command#latex_engine="pdflatex"
+let g:pandoc#syntax#conceal#use = 0
 
 " vim-test
 let test#strategy = "neovim"
