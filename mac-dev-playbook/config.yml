@@ -93,6 +93,7 @@ homebrew_installed_packages:
   - oath-toolkit
   - hashicorp/tap/terraform-ls
   - tmux
+  - most
 
 homebrew_taps:
   - homebrew/core
@@ -105,6 +106,7 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
+  - aws-vault
   - aerial
   - homebrew/cask/docker
   - firefox
@@ -161,6 +163,7 @@ homebrew_cask_apps:
   - homebrew/cask/wireshark
   - touchosc
   - touchosc-bridge
+  - usb-overdrive
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: 
@@ -196,6 +199,7 @@ npm_packages:
     - eslint-cli
     - bash-language-server
     - dockerfile-language-server-nodejs
+    - neovim
   # - name: webpack
   #   state: present # present/absent/latest, default: present
   #   version: "^2.6" # default: N/A
