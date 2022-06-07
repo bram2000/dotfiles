@@ -1,5 +1,3 @@
-# Defined in - @ line 1
-function aws-otp --description 'alias aws-otp oathtool --base32 --totp (gpg -qd ~/.aws/aws-mfa-secret)'
-	oathtool --base32 --totp (gpg -qd ~/.aws/aws-mfa-secret) $argv | pbcopy;
-    echo "otp copied to clipboard"
+function aws-otp --wraps='oathtool --base32 --totp (gpg -qd ~/.secrets/hmrc-aws-mfa) | pbcopy' --description 'alias aws-otp oathtool --base32 --totp (gpg -qd ~/.secrets/hmrc-aws-mfa) | pbcopy'
+  oathtool --base32 --totp (gpg -qd ~/.secrets/hmrc-aws-mfa) | pbcopy $argv; 
 end
