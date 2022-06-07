@@ -3,7 +3,7 @@
 # Please adapt and uncomment the following lines:
 	name = Jon Bramley
 	email = brammers@gmail.com
-	signingkey = 941445F910F0AB64
+	signingkey = 1B8E86B43B4E6C22
 [web]
 	browser = chrome
 [core]
@@ -35,3 +35,5 @@
 	defaultBranch = main
 [web "browser.chrome"]
 	path = /Applications/Google Chrome.app/
+[commit]
+	gpgsign = true
