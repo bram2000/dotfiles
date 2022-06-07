@@ -4,20 +4,20 @@ if not functions -q fisher
     fish -c fisher
 end
 
+set -x ARCH (arch)
+
 set theme_color_scheme gruvbox
 
-# source ~/.asdf/asdf.fish
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
-source ~/.iterm2_shell_integration.(basename $SHELL)
+source (brew --prefix asdf)/libexec/asdf.fish
 
-# https://github.com/fish-shell/fish-shell/issues/7575
-# remove this when fish >= 3.2
-# if test (uname) = Darwin
-# 	function __fish_describe_command; end
-# end
+source ~/.asdf/plugins/java/set-java-home.fish
+
+source ~/.iterm2_shell_integration.(basename $SHELL)
 
 # disable ctrl-d shortcut that kills the terminal
 bind \cd true
 
 # lab completions
-lab completion | source
+# lab completion | source
+
+starship init fish | source
