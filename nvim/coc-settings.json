@@ -1,6 +1,35 @@
 {
+    "yaml.enable": true,
+    "yaml.schemas": {
+        "https://raw.githubusercontent.com/docker/compose/master/compose/config/config_schema_v3.7.json": "docker-*.yml"
+    },
     "python.formatting.provider": "black",
+    "python.formatting.blackPath": "/Users/bram/.asdf/installs/python/3.7.9/bin/black",
+    "python.analysis.typeCheckingMode": "strict",
     "codeLens.enable": true,
+    // "eslint.format.enable": true,
+    "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+    "typescript.inlayHints.variableTypes.enabled": true,
+    "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+    "javascript.inlayHints.variableTypes.enabled": true,
+    "javascript.referencesCodeLens.enable": false,
+    "javascript.referencesCodeLens.showOnAllFunctions": false,
+    "typescript.referencesCodeLens.enable": false,
+    "stylelintplus.autoFixOnFormat": true,
+    "stylelintplus.filetypes": [
+        "css",
+        "less",
+        "postcss",
+        "sass",
+        "scss",
+        "sugarss",
+        "vue",
+        "wxss"
+    ],
+    "css.validate": false,
+    "less.validate": false,
+    "scss.validate": false,
+    "wxss.validate": false,
     "languageserver": {
         "dockerfile": {
             "command": "docker-langserver",
