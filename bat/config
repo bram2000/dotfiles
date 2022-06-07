@@ -3,7 +3,7 @@
 # theme is now set via the `bat` shell alias, to switch automatically for dark/light mode
 
 # Show Git modifications and file header (but no grid)
---style="changes,header"
+--style="plain"
 
 # Use italic text on the terminal (not supported on all terminals)
 --italic-text=always
